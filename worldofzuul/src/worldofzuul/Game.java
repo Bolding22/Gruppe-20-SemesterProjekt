@@ -4,9 +4,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    private Energikilder currentEnergy;
         
-
     public Game() 
     {
         createRooms();
@@ -83,9 +81,7 @@ public class Game
         else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
         }
-        else if (commandWord == CommandWord.USE){
-            pickEnergy(command);
-        }
+       
         return wantToQuit;
     }
 
@@ -115,22 +111,6 @@ public class Game
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
-    }
-    public void pickEnergy(Command command){
-        Energikilder newEnergy = new Energikilder();
-        
-        String s = command.getSecondWord();
-        
-       if ("solar".equals(s)){
-       newEnergy.setSolar(true);
-       newEnergy.setTraditionalBiomass(false);
-        System.out.println("You are now using Solar Power!");
-       } 
-       else if ("biomass".equals(s)){
-       newEnergy.setSolar(false);
-       newEnergy.setTraditionalBiomass(true);
-       System.out.println("You are now using Traditional Biomass");
-       }
     }
 
     private boolean quit(Command command) 
