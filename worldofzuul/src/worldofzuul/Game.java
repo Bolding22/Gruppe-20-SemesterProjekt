@@ -4,12 +4,14 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Energikilder currentEnergy;
         
 
     public Game() 
     {
         createRooms();
         parser = new Parser();
+        
     }
 
 
@@ -33,15 +35,7 @@ public class Game
         expo.setExit("next", meetingRoom);
 
         unRoom.setExit("back", expo);
-
-        scienceRoom.setExit("back", expo);
-
-        quizRoom.setExit("back", expo);
-        
-        meetingRoom.setExit("back", expo);
-        meetingRoom.setExit("next", endRoom);
-
-
+      
         currentRoom = home;
     }
 
@@ -55,7 +49,7 @@ public class Game
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Thank you for playing.  Goodbye.");
     }
 
     private void printWelcome()
@@ -64,6 +58,7 @@ public class Game
         System.out.println("Welcome to the World of Zuul!");
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
+        System.out.println("Type '" + CommandWord.SEARCH + "' to look for items.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
@@ -88,6 +83,9 @@ public class Game
         else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
         }
+        else if (commandWord == CommandWord.USE){
+            pickEnergy(command);
+        }
         return wantToQuit;
     }
 
@@ -104,7 +102,6 @@ public class Game
     {
         if(!command.hasSecondWord()) {
             System.out.println("Go where?");
-            return;
         }
 
         String direction = command.getSecondWord();
@@ -118,6 +115,22 @@ public class Game
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
+    }
+    public void pickEnergy(Command command){
+        Energikilder newEnergy = new Energikilder();
+        
+        String s = command.getSecondWord();
+        
+       if ("solar".equals(s)){
+       newEnergy.setSolar(true);
+       newEnergy.setTraditionalBiomass(false);
+        System.out.println("You are now using Solar Power!");
+       } 
+       else if ("biomass".equals(s)){
+       newEnergy.setSolar(false);
+       newEnergy.setTraditionalBiomass(true);
+       System.out.println("You are now using Traditional Biomass");
+       }
     }
 
     private boolean quit(Command command) 
