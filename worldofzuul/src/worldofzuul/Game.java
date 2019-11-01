@@ -17,28 +17,26 @@ public class Game
 
     private void createRooms()
     {
-        Room denmark, pub, lab, office, technicroom;
+        Room home, expo, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
       
-        denmark = new Room("in Denmark");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
-        technicroom = new Room("in the Technic Room");
+        home = new Room("You're Home, preparing for the Expo");
+        expo = new Room("You've arrived at the Expo, go explore!");
+        scienceRoom = new Room("in the Science Area");
+        quizRoom = new Room("in the Quiz Area");
+        unRoom = new Room("in the UN Area");
+        meetingRoom = new Room("You've arrived at the EM");
+        endRoom = new Room("You've completed the game!");
         
-        denmark.setExit("south", lab);
-        denmark.setExit("west", pub);
-        denmark.setExit("inside", technicroom);
-
-        pub.setExit("east", denmark);
-
-        lab.setExit("north", denmark);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
+        home.setExit("out", expo);
         
-        technicroom.setExit("outside", denmark);
+        expo.setExit("area1", unRoom);
+        expo.setExit("area2", scienceRoom);
+        expo.setExit("area3", quizRoom);
+        expo.setExit("next", meetingRoom);
 
-        currentRoom = denmark;
+        unRoom.setExit("back", expo);
+      
+        currentRoom = home;
     }
 
     public void play() 
