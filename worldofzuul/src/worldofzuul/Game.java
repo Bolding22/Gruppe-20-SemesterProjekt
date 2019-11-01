@@ -15,28 +15,34 @@ public class Game
 
     private void createRooms()
     {
-        Room denmark, sweden, pub, lab, office;
+        Room home, expo, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
       
-        denmark = new Room("in Denmark");
-        sweden = new Room("in Sweden");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        home = new Room("You're Home, preparing for the Expo");
+        expo = new Room("You've arrived at the Expo, go explore!");
+        scienceRoom = new Room("in the Science Area");
+        quizRoom = new Room("in the Quiz Area");
+        unRoom = new Room("in the UN Area");
+        meetingRoom = new Room("You've arrived at the EM");
+        endRoom = new Room("You've completed the game!");
         
-        denmark.setExit("Sweden", sweden);
-        denmark.setExit("south", lab);
-        denmark.setExit("west", pub);
+        home.setExit("out", expo);
+        
+        expo.setExit("area1", unRoom);
+        expo.setExit("area2", scienceRoom);
+        expo.setExit("area3", quizRoom);
+        expo.setExit("next", meetingRoom);
 
-        sweden.setExit("Denmark", denmark);
+        unRoom.setExit("back", expo);
 
-        pub.setExit("east", denmark);
+        scienceRoom.setExit("back", expo);
 
-        lab.setExit("north", denmark);
-        lab.setExit("east", office);
+        quizRoom.setExit("back", expo);
+        
+        meetingRoom.setExit("back", expo);
+        meetingRoom.setExit("next", endRoom);
 
-        office.setExit("west", lab);
 
-        currentRoom = denmark;
+        currentRoom = home;
     }
 
     public void play() 
