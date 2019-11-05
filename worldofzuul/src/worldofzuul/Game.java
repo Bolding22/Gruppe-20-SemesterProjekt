@@ -7,11 +7,12 @@ public class Game {
     private Parser parser;
     private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<Item>();
-   
+    private Credibility credScore;
 
     public Game() {
         createRooms();
         parser = new Parser();
+        credScore = new Credibility();
 
     }
 
@@ -44,7 +45,9 @@ public class Game {
 
         currentRoom = home;
 
-        expo.setItem(new Item("Poster"));
+        expo.setItem(new Item("SolarPoster"));
+        expo.setItem(new Item("UN-Poster"));
+        expo.setItem(new Item("QuizPoster"));
 
         scienceRoom.setItem(new Item("Solarpanel"));
 
@@ -74,10 +77,17 @@ public class Game {
 
     private void printWelcome() {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to the Game of Knowledge!");
+        System.out.println("GoK is a new, incredibly awesome adventure game.");
+        System.out.println();
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
+        System.out.println("Type '" + CommandWord.GO + "' if you want to move.");
         System.out.println("Type '" + CommandWord.SEARCH + "' to look for items.");
+        System.out.println("Type '" + CommandWord.LOOK + "' to look for NPC's.");
+        System.out.println("Type '" + CommandWord.GET + "' to pick up items.");
+        System.out.println("Type '" + CommandWord.DROP + "' to drop items.");
+        System.out.println("Type '" + CommandWord.CREDIBILITY + "' to view your Credibility Score.");
+        System.out.println("Type '" + CommandWord.INVENTORY + "' to view your inventory.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
@@ -94,35 +104,74 @@ public class Game {
 
         if (commandWord == CommandWord.HELP) {
             printHelp();
+        
         } else if (commandWord == CommandWord.GO) {
             goRoom(command);
+        
         } else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
+        
         } else if (commandWord == CommandWord.INVENTORY) {
             printInventory();
+        
         } else if (commandWord == CommandWord.GET) {
             getItem(command);
+        
         } else if (commandWord == CommandWord.DROP) {
             dropItem(command);
+        
         } else if (commandWord == CommandWord.SEARCH) {
             searchItem(command);
+        
         } else if (commandWord == CommandWord.LOOK) {
             lookNpc(command);
+        
         } else if (commandWord == CommandWord.TALK) {
             talkNpc(command);
+        
+        } else if (commandWord == CommandWord.CREDIBILITY) {
+            showCred(command);
         }
 
         return wantToQuit;
     }
+    
+    private void showCred(Command command){
+        if (!command.hasSecondWord()){
+            System.out.println(credScore.getCredScore());
+        }
+    }
+    
 
     private void talkNpc(Command command) {
 
         if (!command.hasSecondWord()) {
-            System.out.println("Talk to who?");;
+            System.out.println("Talk to who?");
         } else if (command.hasSecondWord()) {
+            
+            // NPC's says their dialog, if secondWord matches with NPC name in the room.
             for (int i = 0; i < currentRoom.getNpcs().size(); i++) {
                 if (currentRoom.getNpcs().get(i).getName().equals(command.getSecondWord())) {
+                    
                     System.out.println(currentRoom.getNpcs().get(i).getDialog());
+                    
+                    //Gives credibility, when NPC's are talked to.
+                    
+                    if ("Rick".equals(command.getSecondWord())) {
+                        credScore.giveFifteenCred();
+                        currentRoom.removeNpc("Rick");
+                        System.out.println("\nRick has left.");
+                    
+                    } else if ("Villy".equals(command.getSecondWord())) {
+                        credScore.giveTenCred();
+                        currentRoom.removeNpc("Villy");
+                        System.out.println("\nVilly has left.");
+                    
+                    } else if ("Quizmaster".equals(command.getSecondWord())) {
+                        credScore.giveTwentyCred();
+                        currentRoom.removeNpc("Quizmaster");
+                        System.out.println("\nQuizmaster has left.");
+                    }
                 }
             }
         }
@@ -180,11 +229,20 @@ public class Game {
 
         if (newItem == null) {
             System.out.println("There is no such item!");
+            credScore.takeFiveCred();
         } else {
             inventory.add(newItem);
             currentRoom.removeItem(item);
             System.out.println("You picked up: " + item);
-
+        }
+        if ("Solarpanel".equals(command.getSecondWord())) {
+            credScore.giveFiveCred();
+        } else if ("SolarPoster".equals(command.getSecondWord())) {
+            credScore.giveFiveCred();
+        } else if ("UN-Poster".equals(command.getSecondWord())) {
+            credScore.giveFiveCred();
+        } else if ("QuizPoster".equals(command.getSecondWord())) {
+            credScore.giveFiveCred();
         }
     }
 

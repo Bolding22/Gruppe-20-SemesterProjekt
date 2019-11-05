@@ -16,6 +16,7 @@ public class Npc {
 
 private String name;
 private String dialog;
+private String description;
 
 public Npc(String name, String dialog){
     this.name = name;
@@ -36,6 +37,14 @@ public Npc(String name, String dialog){
 
     public void setDialog(String dialog) {
         this.dialog = dialog;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
 
