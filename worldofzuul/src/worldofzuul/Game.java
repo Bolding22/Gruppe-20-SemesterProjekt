@@ -1,9 +1,12 @@
 package worldofzuul;
 
+import java.util.ArrayList;
+
 public class Game 
 {
     private Parser parser;
     private Room currentRoom;
+    private ArrayList<Item> inventory = new ArrayList<Item>();
         
     public Game() 
     {
@@ -17,7 +20,7 @@ public class Game
     {
         Room home, expo, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
       
-        home = new Room("You're Home, preparing for the Expo");
+        home = new Room("Home, preparing for the Expo");
         expo = new Room("You've arrived at the Expo, go explore!");
         scienceRoom = new Room("in the Science Area");
         quizRoom = new Room("in the Quiz Area");
@@ -42,6 +45,15 @@ public class Game
         meetingRoom.setExit("next", endRoom);
       
         currentRoom = home;
+        
+        expo.setItem(new Item("Poster"));
+        
+        scienceRoom.setItem(new Item("Solarpanel"));
+        
+        home.setItem(new Item("Switch"));
+        
+        quizRoom.setItem(new Item("Invitation"));
+        
     }
 
     public void play() 
@@ -88,8 +100,78 @@ public class Game
         else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
         }
+        else if (commandWord == CommandWord.INVENTORY){
+            printInventory();
+        }
+        else if (commandWord == CommandWord.GET){
+            getItem(command);
+        }
+        else if (commandWord == CommandWord.DROP){
+            dropItem(command);
+        }
        
         return wantToQuit;
+    }
+    
+    private void dropItem(Command command) 
+    {
+        if(!command.hasSecondWord()) {
+            System.out.println("Drop what?");
+            return;
+        }
+
+        String item = command.getSecondWord();
+
+        Item newItem = null;
+        int index = 0;
+        for(int i = 0 ; i < inventory.size() ; i++)
+        {
+            if (inventory.get(i).getDescription().equals(item)){
+                newItem = inventory.get(i);
+                index = i;
+            }
+        }
+
+        if (newItem == null) {
+            System.out.println("That item is not in your inventory!");
+        }
+        else {
+            inventory.remove(index);
+            currentRoom.setItem(new Item(item));
+            System.out.println("You dropped: " + item);
+        }
+    }
+    
+    private void getItem(Command command) 
+    {
+        if(!command.hasSecondWord()) {
+            System.out.println("Get what?");
+            return;
+        }
+
+        String item = command.getSecondWord();
+
+        Item newItem = currentRoom.getItem(item);
+
+        if (newItem == null) {
+            System.out.println("There is no such item!");
+        }
+        else {
+            inventory.add(newItem);
+            currentRoom.removeItem(item);
+            System.out.println("You picked up: " + item);
+            
+            
+        }
+    }
+    
+    private void printInventory() {
+        String output = "";
+        for (int i = 0 ; i < inventory.size() ; i++ ) {
+            output += inventory.get(i).getDescription() + " ";
+        }
+        System.out.println("Your inventory contains: " + output);
+        
     }
 
     private void printHelp() 
