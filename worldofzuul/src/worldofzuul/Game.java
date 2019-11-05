@@ -33,6 +33,13 @@ public class Game
         expo.setExit("next", meetingRoom);
 
         unRoom.setExit("back", expo);
+        
+        scienceRoom.setExit("back", expo);
+        
+        quizRoom.setExit("back", expo);
+        
+        meetingRoom.setExit("back", expo);
+        meetingRoom.setExit("next", endRoom);
       
         currentRoom = home;
     }
