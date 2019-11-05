@@ -10,6 +10,7 @@ public class Room {
     private String description;
     private HashMap<String, Room> exits;
     private ArrayList<Item> items = new ArrayList<Item>();
+    private ArrayList<Npc> npcs = new ArrayList<>();
 
     public Room(String description) {
         this.description = description;
@@ -28,14 +29,17 @@ public class Room {
         return description + ".\n" + getExitString();
     }
 
+    public ArrayList<Npc> getNpcs() {
+        return npcs;
+    }
+
     private String getExitString() {
         String returnString = "Routes available:";
         Set<String> keys = exits.keySet();
         for (Iterator iter = keys.iterator(); iter.hasNext();) {
             returnString += " " + iter.next();
         }
-        returnString += "\nItems in the room: \n";
-        returnString += getItemsRoom();
+        
         return returnString;
     }
 
@@ -80,11 +84,25 @@ public class Room {
     /*
     * What is in the room?
      */
-    public String getItemsRoom() {
+    public void getItemsRoom() {
         String output = "";
         for (int i = 0; i < items.size(); i++) {
             output += items.get(i).getDescription() + " ";
         }
-        return output;
+        System.out.println(output);
     }
+    
+    
+    public void addNpc(Npc n){
+        npcs.add(n);
+    }
+    
+    public void getNpcsRoom() {
+        String output = "";
+        for (int i = 0; i < npcs.size(); i++) {
+            output += npcs.get(i).getName() + " ";
+        }
+        System.out.println("Do you wanna talk to: " + output + "☺?");
+    }    
+    
 }
