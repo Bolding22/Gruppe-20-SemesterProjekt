@@ -26,7 +26,7 @@ public class Room {
     }
 
     public String getLongDescription() {
-        return description + ".\n" + getExitString();
+        return description + "\n" + getExitString();
     }
 
     public ArrayList<Npc> getNpcs() {

@@ -20,7 +20,9 @@ public class Game {
         Room home, expo, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
 
         home = new Room("You're Home, preparing for the Expo");
-        expo = new Room("You've arrived at the Expo, go explore!");
+        expo = new Room("You've arrived at the Expo! Wow! There's so many cool"
+                + " posters.\nDo you wanna know some more? "
+                + "Search and you will find.\n");
         scienceRoom = new Room("in the Science Area");
         quizRoom = new Room("in the Quiz Area");
         unRoom = new Room("in the UN Area");
