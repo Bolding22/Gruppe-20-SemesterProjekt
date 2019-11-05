@@ -39,7 +39,7 @@ public class Room {
         for (Iterator iter = keys.iterator(); iter.hasNext();) {
             returnString += " " + iter.next();
         }
-        
+
         return returnString;
     }
 
@@ -91,18 +91,25 @@ public class Room {
         }
         System.out.println(output);
     }
-    
-    
-    public void addNpc(Npc n){
+
+    public void addNpc(Npc n) {
         npcs.add(n);
     }
-    
+
     public void getNpcsRoom() {
         String output = "";
         for (int i = 0; i < npcs.size(); i++) {
             output += npcs.get(i).getName() + " ";
         }
         System.out.println("Do you wanna talk to: " + output + "☺?");
-    }    
-    
+    }
+
+    public void removeNpc(String npcName) {
+        for (int i = 0; i < npcs.size(); i++) {
+            if (npcs.get(i).getName().equals(npcName)) {
+                npcs.remove(i);
+            }
+        }
+    }
+
 }
