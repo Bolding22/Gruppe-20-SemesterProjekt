@@ -99,9 +99,9 @@ public class Room {
     public void getNpcsRoom() {
         String output = "";
         for (int i = 0; i < npcs.size(); i++) {
-            output += npcs.get(i).getName() + " ";
+            output += "[" + npcs.get(i).getName() + npcs.get(i).getDescription() + "]";
         }
-        System.out.println("Do you wanna talk to: " + output + "☺?");
+        System.out.println("Do you want to talk to: " + output + "?");
     }
 
     public void removeNpc(String npcName) {
