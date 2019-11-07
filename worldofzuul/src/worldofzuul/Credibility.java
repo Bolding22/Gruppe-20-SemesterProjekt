@@ -14,6 +14,7 @@ public class Credibility {
     private int credScore;
     private final int max = 100;
     private final int min = 0;
+    private boolean exist = false;
     
     public Credibility(){
         credScore = min;
@@ -49,4 +50,14 @@ public class Credibility {
     public int getCredScore() {
         return credScore;
     }
+
+    public boolean isExist() {
+        return exist;
+    }
+
+    public void setExist(boolean exist) {
+        this.exist = exist;
+    }
+
+    
 }

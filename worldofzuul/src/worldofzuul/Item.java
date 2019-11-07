@@ -10,20 +10,15 @@ package worldofzuul;
  * @author oliver
  */
 class Item {
-    
-    String description;
-    
-    public Item(String newdescription){
-        description = newdescription;
+
+    private String name;
+
+    public Item(String name) {
+        this.name = name;
     }
 
-    
-    public String getDescription(){
-        return description;
+    public String getName() {
+        return name;
     }
+
 }
-    
-
-
-
-
