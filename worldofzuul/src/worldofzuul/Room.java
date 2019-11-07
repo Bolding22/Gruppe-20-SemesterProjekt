@@ -56,7 +56,7 @@ public class Room {
 
     public Item getItem(String itemName) {
         for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).getDescription().equals(itemName)) {
+            if (items.get(i).getName().equals(itemName)) {
                 return items.get(i);
             }
         }
@@ -75,7 +75,7 @@ public class Room {
      */
     public void removeItem(String itemName) {
         for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).getDescription().equals(itemName)) {
+            if (items.get(i).getName().equals(itemName)) {
                 items.remove(i);
             }
         }
@@ -87,7 +87,7 @@ public class Room {
     public void getItemsRoom() {
         String output = "";
         for (int i = 0; i < items.size(); i++) {
-            output += items.get(i).getDescription() + " ";
+            output += items.get(i).getName() + " ";
         }
         System.out.println(output);
     }
