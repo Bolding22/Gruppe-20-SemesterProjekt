@@ -60,8 +60,8 @@ public class Game {
         quizRoom.setItem(new Item("Invitation"));
 
         // Create and add NPC's to rooms.
-        scienceRoom.addNpc(new Npc("Jeff", "My name is jeff"));
-        scienceRoom.addNpc(new Npc("Rick", "Solar..."));
+        scienceRoom.addNpc(new Npc("Jeff", "My name is jeff", ", an Intern working with Rick"));
+        scienceRoom.addNpc(new Npc("Rick", "Solar...", ", is an Expert on Solar Energi" ));
 
         unRoom.addNpc(new Npc("Villy", "Hello there!\n"
                 + "My name is Villy and I’m here to represent The UN and tell you a bit about our global goals for sustainable development.\n"
@@ -73,9 +73,9 @@ public class Game {
                 + "The overall goal is to get rid of the energy produced by fossil fuels and replace them with renewable energy like solar power!\n"
                 + "I even heard that there is a guy here today that can tell you everything about solar energy! You should go see him!\n"
                 + "Have a nice day!"
-        ));
+        , ", is a representive of the United Nations"));
 
-        quizRoom.addNpc(new Npc("Quizmaster", "..."));
+        quizRoom.addNpc(new Npc("Quizmaster", "...", ", who will be testing your knowlegde"));
 
     }
 

@@ -18,9 +18,10 @@ private String name;
 private String dialog;
 private String description;
 
-public Npc(String name, String dialog){
+public Npc(String name, String dialog, String description){
     this.name = name;
     this.dialog = dialog;
+    this.description = description;
 }
 
     public String getName() {
