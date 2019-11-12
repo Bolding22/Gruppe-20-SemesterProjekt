@@ -115,26 +115,26 @@ public class Game {
         quizMaster.setDialogAnswer("True.", 0);
         quizMaster.setDialogAnswer("False.", 1);
         quizRoom.addNpc(quizMaster);
-        
+
         //NPC Representatives at the meeting.
         Npc nr1 = new Npc("NR1", ", representative of ...", 1, 3);
-        
+
         nr1.setDialogSay("Economy", 0);
         nr1.setDialogAnswer("Economy Argument", 0);
         nr1.setDialogAnswer("Employment Argument", 1);
         nr1.setDialogAnswer("Bless them with your knowledge", 2);
         meetingRoom.addNpc(nr1);
-        
+
         Npc nr2 = new Npc("NR2", ", representative of ...", 1, 3);
         meetingRoom.addNpc(nr2);
-        
+
         nr2.setDialogSay("Employment", 0);
         nr2.setDialogAnswer("Economy Argument", 0);
         nr2.setDialogAnswer("Employment Argument", 1);
         nr2.setDialogAnswer("Bless them with your knowledge", 2);
-        
+
         Npc nr3 = new Npc("NR3", ", representative of ...", 1, 3);
-        
+
         nr3.setDialogSay("Knowledge", 0);
         nr3.setDialogAnswer("Economy Argument", 0);
         nr3.setDialogAnswer("Employment Argument", 1);
@@ -142,8 +142,8 @@ public class Game {
         meetingRoom.addNpc(nr3);
 
     }
-    
-        private void goRoom(Command command) {
+
+    private void goRoom(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("Go where?");
         }
@@ -186,11 +186,12 @@ public class Game {
                 + "\nGOOD LUCK!");
         System.out.println();
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
-        System.out.println("Type '" + CommandWord.GO + "' + a route, to move to a new location.");
+        System.out.println("Type '" + CommandWord.GO + "' + route, to move to a new location.");
         System.out.println("Type '" + CommandWord.SEARCH + "' to look for items.");
         System.out.println("Type '" + CommandWord.LOOK + "' to look for people to talk to.");
-        System.out.println("Type '" + CommandWord.GET + "' to pick up items.");
-        System.out.println("Type '" + CommandWord.DROP + "' to drop items.");
+        System.out.println("Type '" + CommandWord.TALK + "' + Name, to talk to people.");
+        System.out.println("Type '" + CommandWord.GET + "' + Itemname, to pick up and read/show items.");
+        System.out.println("Type '" + CommandWord.DROP + "' + Itemname, to drop items.");
         System.out.println("Type '" + CommandWord.CREDIBILITY + "' to view your Credibility Score.");
         System.out.println("Type '" + CommandWord.INVENTORY + "' to view your inventory.");
         System.out.println();
@@ -261,10 +262,10 @@ public class Game {
                     System.out.println(currentRoom.getNpcs().get(i).getName() + " says: " + currentRoom.getNpcs().get(i).getDialogSay(0));
                     System.out.print("\nAvailable answers:");
                     System.out.print(" [" + (1) + "] " + currentRoom.getNpcs().get(i).getDialogAns(0) + " [" + (2) + "] " + currentRoom.getNpcs().get(i).getDialogAns(1));
-                    if (currentRoom.getName().equals("meetingRoom")){
+                    if (currentRoom.getName().equals("meetingRoom")) {
                         System.out.println(" [3] " + currentRoom.getNpcs().get(i).getDialogAns(2));
                     }
-                    
+
                     System.out.println("\nType the corresponding number for your answer to answer.");
 
                     while (true) {
@@ -294,13 +295,13 @@ public class Game {
                                 currentRoom.removeNpc("Rick");
                                 System.out.println("\nRick has left.");
                                 break;
-                                
+
                             case "Villy":
                                 credScore.giveTenCred();
                                 currentRoom.removeNpc("Villy");
                                 System.out.println("\nVilly has left.");
                                 break;
-                                
+
                             case "Quizmaster":
                                 // Question #2
                                 System.out.println(currentRoom.getNpcs().get(i).getName() + " says: " + currentRoom.getNpcs().get(i).getDialogSay(1));
