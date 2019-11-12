@@ -8,12 +8,14 @@ import java.util.Iterator;
 public class Room {
 
     private String description;
+    private String name;
     private HashMap<String, Room> exits;
-    private ArrayList<Item> items = new ArrayList<Item>();
+    private ArrayList<Item> items = new ArrayList<>();
     private ArrayList<Npc> npcs = new ArrayList<>();
 
-    public Room(String description) {
+    public Room(String description, String name) {
         this.description = description;
+        this.name = name;
         exits = new HashMap<String, Room>();
     }
 
@@ -110,6 +112,10 @@ public class Room {
                 npcs.remove(i);
             }
         }
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
