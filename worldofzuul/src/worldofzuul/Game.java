@@ -16,6 +16,7 @@ public class Game {
 
     }
 
+    // Rooms
     private void createRooms() {
         Room home, expo, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
 
@@ -160,6 +161,7 @@ public class Game {
         }
     }
 
+    // Basic features
     public void play() {
         printWelcome();
 
@@ -242,6 +244,24 @@ public class Game {
         return wantToQuit;
     }
 
+    private void printHelp() {
+        System.out.println("You are lost. You are alone. You wander");
+        System.out.println("around at the university.");
+        System.out.println();
+        System.out.println("Your command words are:");
+        parser.showCommands();
+    }
+
+    private boolean quit(Command command) {
+        if (command.hasSecondWord()) {
+            System.out.println("Quit what?");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // Credibility Score
     private void showCred(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println(credScore.getCredScore());
@@ -249,6 +269,7 @@ public class Game {
 
     }
 
+    // NPC's
     private void talkNpc(Command command) {
 
         if (!command.hasSecondWord()) {
@@ -363,6 +384,7 @@ public class Game {
         }
     }
 
+    // Items
     private void searchItem(Command command) {
 
         if (!command.hasSecondWord()) {
@@ -431,6 +453,7 @@ public class Game {
         }
     }
 
+    // Inventory
     private void printInventory() {
         String output = "";
         for (int i = 0; i < inventory.size(); i++) {
@@ -440,20 +463,4 @@ public class Game {
 
     }
 
-    private void printHelp() {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
-        System.out.println();
-        System.out.println("Your command words are:");
-        parser.showCommands();
-    }
-
-    private boolean quit(Command command) {
-        if (command.hasSecondWord()) {
-            System.out.println("Quit what?");
-            return false;
-        } else {
-            return true;
-        }
-    }
 }
