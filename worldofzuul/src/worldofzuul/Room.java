@@ -49,9 +49,7 @@ public class Room {
         return exits.get(direction);
     }
 
-    /*
-    * Find items in room
-     */
+    // Find items in room
     public Item getItem(int index) {
         return items.get(index);
     }
@@ -72,9 +70,7 @@ public class Room {
         items.add(newitem);
     }
 
-    /*
-    *Remove item from the room
-     */
+    // Remove item from the room
     public void removeItem(String itemName) {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getName().equals(itemName)) {
@@ -83,9 +79,7 @@ public class Room {
         }
     }
 
-    /*
-    * What is in the room?
-     */
+    // What is in the room?
     public void getItemsRoom() {
         String output = "";
         for (int i = 0; i < items.size(); i++) {

@@ -10,7 +10,7 @@ package worldofzuul;
  * @author wbold
  */
 public class Conversation {
-    
+
     private String[] say;
     private String[] answer;
 
@@ -34,6 +34,5 @@ public class Conversation {
     public void setAnswer(String answer, int i) {
         this.answer[i] = answer;
     }
-    
-    
+
 }

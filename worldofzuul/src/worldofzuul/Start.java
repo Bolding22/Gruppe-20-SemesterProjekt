@@ -11,12 +11,14 @@ package worldofzuul;
  */
 public class Start {
 
-    /**exit
+    /**
+     * exit
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Game start = new Game(); 
-      start.play();
+        Game start = new Game();
+        start.play();
     }
-    
+
 }

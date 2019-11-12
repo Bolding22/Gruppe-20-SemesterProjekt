@@ -10,43 +10,48 @@ package worldofzuul;
  * @author wbold
  */
 public class Credibility {
-    
+
     private int credScore;
     private final int max = 100;
     private final int min = 0;
     private boolean exist = false;
-    
-    public Credibility(){
+
+    public Credibility() {
         credScore = min;
     }
-    
-    public void giveFiveCred(){
+
+    public void giveFiveCred() {
         credScore += 5;
-        if (credScore>95){
+        if (credScore > 95) {
             credScore = max;
         }
     }
-    public void giveTenCred(){
+
+    public void giveTenCred() {
         credScore += 10;
-        if (credScore>95){
+        if (credScore > 95) {
             credScore = max;
         }
     }
-    public void giveFifteenCred(){
+
+    public void giveFifteenCred() {
         credScore += 15;
-        if (credScore>95){
+        if (credScore > 95) {
             credScore = max;
         }
     }
-    public void giveTwentyCred(){
+
+    public void giveTwentyCred() {
         credScore += 20;
-        if (credScore>95){
+        if (credScore > 95) {
             credScore = max;
         }
     }
-    public void takeFiveCred(){
+
+    public void takeFiveCred() {
         credScore -= 5;
     }
+
     public int getCredScore() {
         return credScore;
     }
@@ -59,5 +64,4 @@ public class Credibility {
         this.exist = exist;
     }
 
-    
 }
