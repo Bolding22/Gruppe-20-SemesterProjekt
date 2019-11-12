@@ -6,7 +6,7 @@ public class Game {
 
     private Parser parser;
     private Room currentRoom;
-    private ArrayList<Item> inventory = new ArrayList<Item>();
+    private ArrayList<Item> inventory = new ArrayList<>();
     private Credibility credScore;
 
     public Game() {
@@ -437,19 +437,28 @@ public class Game {
             currentRoom.removeItem(item);
             System.out.println("You picked up: " + item);
         }
-        if ("Solarpanel".equals(command.getSecondWord())) {
-            credScore.giveFiveCred();
-        } else if ("SolarPoster".equals(command.getSecondWord())) {
-            credScore.giveFiveCred();
-            System.out.println("\nInterrested in Solarpower?\n"
-                    + "Here are some facts about it!\n"
-                    + "#1: ...\n"
-                    + "#2: ...\n"
-                    + "If you want to learn more, look for Rick in the Science Area!");
-        } else if ("UN-Poster".equals(command.getSecondWord())) {
-            credScore.giveFiveCred();
-        } else if ("QuizPoster".equals(command.getSecondWord())) {
-            credScore.giveFiveCred();
+        if (null != command.getSecondWord()) {
+            switch (command.getSecondWord()) {
+                case "Solarpanel":
+                    credScore.giveFiveCred();
+                    break;
+                case "SolarPoster":
+                    credScore.giveFiveCred();
+                    System.out.println("\nInterrested in Solarpower?\n"
+                            + "Here are some facts about it!\n"
+                            + "#1: ...\n"
+                            + "#2: ...\n"
+                            + "If you want to learn more, look for Rick in the Science Area!");
+                    break;
+                case "UN-Poster":
+                    credScore.giveFiveCred();
+                    break;
+                case "QuizPoster":
+                    credScore.giveFiveCred();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
