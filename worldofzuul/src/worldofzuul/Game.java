@@ -1,7 +1,6 @@
 package worldofzuul;
 
 import java.util.ArrayList;
-import javax.print.DocFlavor;
 
 public class Game {
 
@@ -142,6 +141,23 @@ public class Game {
         nr3.setDialogAnswer("Bless them with your knowledge", 2);
         meetingRoom.addNpc(nr3);
 
+    }
+    
+        private void goRoom(Command command) {
+        if (!command.hasSecondWord()) {
+            System.out.println("Go where?");
+        }
+
+        String direction = command.getSecondWord();
+
+        Room nextRoom = currentRoom.getExit(direction);
+
+        if (nextRoom == null) {
+            System.out.println("There is no door!");
+        } else {
+            currentRoom = nextRoom;
+            System.out.println(currentRoom.getLongDescription());
+        }
     }
 
     public void play() {
@@ -429,23 +445,6 @@ public class Game {
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
-    }
-
-    private void goRoom(Command command) {
-        if (!command.hasSecondWord()) {
-            System.out.println("Go where?");
-        }
-
-        String direction = command.getSecondWord();
-
-        Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null) {
-            System.out.println("There is no door!");
-        } else {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
-        }
     }
 
     private boolean quit(Command command) {
