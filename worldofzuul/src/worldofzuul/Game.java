@@ -1,6 +1,7 @@
 package worldofzuul;
 
 import java.util.ArrayList;
+import javax.print.DocFlavor;
 
 public class Game {
 
@@ -19,17 +20,17 @@ public class Game {
     private void createRooms() {
         Room home, expo, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
 
-        home = new Room("You're Home, preparing for the Expo");
+        home = new Room("You're Home, preparing for the Expo", "home");
         expo = new Room("You've arrived at the Expo! Wow! There's so many cool"
                 + " posters.\nDo you wanna know some more? "
-                + "Search and you will find.\n");
-        scienceRoom = new Room("in the Science Area");
-        quizRoom = new Room("in the Quiz Area");
-        unRoom = new Room("in the UN Area");
-        meetingRoom = new Room("Welcome to the Energy Meeting 2020."
-                + "Look around and talk to the representatives from the different nations."
-                + "Maybe you can teach them a thing or to.");
-        endRoom = new Room("You've completed the game!");
+                + "Search and you will find.\n", "expo");
+        scienceRoom = new Room("in the Science Area", "scienceRoom");
+        quizRoom = new Room("in the Quiz Area", "quizRoom");
+        unRoom = new Room("in the UN Area", "unRoom");
+        meetingRoom = new Room("Welcome to the Energy Meeting 2020. "
+                + "Look around and talk to the representatives from the different nations. "
+                + "Maybe you can teach them a thing or to.", "meetingRoom");
+        endRoom = new Room("You've completed the game!", "endRoom");
         currentRoom = home;
 
         home.setExit("out", expo);
@@ -60,10 +61,36 @@ public class Game {
         quizRoom.setItem(new Item("Invitation"));
 
         // Create and add NPC's to rooms.
-        scienceRoom.addNpc(new Npc("Jeff", "My name is jeff", ", an Intern working with Rick"));
-        scienceRoom.addNpc(new Npc("Rick", "Solar...", ", is an Expert on Solar Energi" ));
+        // NPC Jeff
+        Npc jeff = new Npc("Jeff", ", an Intern working with Rick", 1, 2);
 
-        unRoom.addNpc(new Npc("Villy", "Hello there!\n"
+        jeff.setDialogSay("Hi, my name is Jeff, and I'm an intern working with Rick. I don't really know much yet... Still learning!", 0);
+        scienceRoom.addNpc(jeff);
+
+        // NPC Rick
+        Npc rick = new Npc("Rick", ", an Expert on Solar Power", 1, 2);
+
+        rick.setDialogSay("Hi! My name is Rick\n"
+                + "I have some amazing things to tell you about solar power!\n"
+                + "First off all I would like to say that I believe that solar power is the future for all of us\n"
+                + "BUT... That is why I am here today! To give you all the knowledge you need to understand the basics of solar power.\n"
+                + "There are two types of solar panels that i want to tell you about today\n"
+                + "The first one is photovoltaic solar panels or PV-panels for us nerds. These panels are small, thin and lightweight.\n"
+                + "These cells turn light into electricity and even works in low light.\n"
+                + "The downside to these panels is that they can only power smaller devices or be used for slower charging\n"
+                + "Then there are the bigger and bulkier silicon solar panels that can power cities or even whole countries\n"
+                + "But of course, these have a downside as well. They are way more expensive and they are very large and non-flexible\n"
+                + "In the ideal world we would make the smaller PV-panels better and more powerful or make the silicon panels smaller and more flexible\n"
+                + "I really hope you learned something and want to participate in the quiz! Have a great day!", 0);
+
+        rick.setDialogAnswer("Wow. That sounds really cool! I will definately do the quiz!", 0);
+
+        scienceRoom.addNpc(rick);
+
+        // NPC Villy
+        Npc villy = new Npc("Villy", ", a representive of the United Nations", 1, 2);
+
+        villy.setDialogSay("Hello there!\n"
                 + "My name is Villy and I’m here to represent The UN and tell you a bit about our global goals for sustainable development.\n"
                 + "There are 17 global goals which covers everything from ending poverty to making sure everyone has sustainable energy.\n"
                 + "And you might be surprised to hear this.\n"
@@ -72,10 +99,48 @@ public class Game {
                 + "Goal number 7 is all about affordable and clean energy and making sure that everyone has ascess to it.\n"
                 + "The overall goal is to get rid of the energy produced by fossil fuels and replace them with renewable energy like solar power!\n"
                 + "I even heard that there is a guy here today that can tell you everything about solar energy! You should go see him!\n"
-                + "Have a nice day!"
-        , ", is a representive of the United Nations"));
+                + "Have a nice day!", 0);
 
-        quizRoom.addNpc(new Npc("Quizmaster", "...", ", who will be testing your knowlegde"));
+        villy.setDialogAnswer("I'd love to help", 0);
+
+        unRoom.addNpc(villy);
+
+        //NPC Quizmaster
+        Npc quizMaster = new Npc("Quizmaster", ", who will be testing your knowlegde", 4, 2);
+
+        quizMaster.setDialogSay("Question #1\n What does...?", 0);
+        quizMaster.setDialogSay("Question #2\n What does...?", 1);
+        quizMaster.setDialogSay("Question #3\n What does...?", 2);
+        quizMaster.setDialogSay("Thanks for participating. It's lovely to see such brilliant minds.", 3);
+
+        quizMaster.setDialogAnswer("True.", 0);
+        quizMaster.setDialogAnswer("False.", 1);
+        quizRoom.addNpc(quizMaster);
+        
+        //NPC Representatives at the meeting.
+        Npc nr1 = new Npc("NR1", ", representative of ...", 1, 3);
+        
+        nr1.setDialogSay("Economy", 0);
+        nr1.setDialogAnswer("Economy Argument", 0);
+        nr1.setDialogAnswer("Employment Argument", 1);
+        nr1.setDialogAnswer("Bless them with your knowledge", 2);
+        meetingRoom.addNpc(nr1);
+        
+        Npc nr2 = new Npc("NR2", ", representative of ...", 1, 3);
+        meetingRoom.addNpc(nr2);
+        
+        nr2.setDialogSay("Employment", 0);
+        nr2.setDialogAnswer("Economy Argument", 0);
+        nr2.setDialogAnswer("Employment Argument", 1);
+        nr2.setDialogAnswer("Bless them with your knowledge", 2);
+        
+        Npc nr3 = new Npc("NR3", ", representative of ...", 1, 3);
+        
+        nr3.setDialogSay("Knowledge", 0);
+        nr3.setDialogAnswer("Economy Argument", 0);
+        nr3.setDialogAnswer("Employment Argument", 1);
+        nr3.setDialogAnswer("Bless them with your knowledge", 2);
+        meetingRoom.addNpc(nr3);
 
     }
 
@@ -107,7 +172,7 @@ public class Game {
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println("Type '" + CommandWord.GO + "' + a route, to move to a new location.");
         System.out.println("Type '" + CommandWord.SEARCH + "' to look for items.");
-        System.out.println("Type '" + CommandWord.LOOK + "' to look for NPC's.");
+        System.out.println("Type '" + CommandWord.LOOK + "' to look for people to talk to.");
         System.out.println("Type '" + CommandWord.GET + "' to pick up items.");
         System.out.println("Type '" + CommandWord.DROP + "' to drop items.");
         System.out.println("Type '" + CommandWord.CREDIBILITY + "' to view your Credibility Score.");
@@ -177,23 +242,97 @@ public class Game {
             for (int i = 0; i < currentRoom.getNpcs().size(); i++) {
                 if (currentRoom.getNpcs().get(i).getName().equals(command.getSecondWord())) {
 
-                    System.out.println(currentRoom.getNpcs().get(i).getDialog());
+                    System.out.println(currentRoom.getNpcs().get(i).getName() + " says: " + currentRoom.getNpcs().get(i).getDialogSay(0));
+                    System.out.print("\nAvailable answers:");
+                    System.out.print(" [" + (1) + "] " + currentRoom.getNpcs().get(i).getDialogAns(0) + " [" + (2) + "] " + currentRoom.getNpcs().get(i).getDialogAns(1));
+                    if (currentRoom.getName().equals("meetingRoom")){
+                        System.out.println(" [3] " + currentRoom.getNpcs().get(i).getDialogAns(2));
+                    }
+                    
+                    System.out.println("\nType the corresponding number for your answer to answer.");
 
-                    //Gives credibility, when NPC's are talked to.
-                    if ("Rick".equals(command.getSecondWord())) {
-                        credScore.giveFifteenCred();
-                        currentRoom.removeNpc("Rick");
-                        System.out.println("\nRick has left.");
+                    while (true) {
+                        switch (parser.getString()) {
+                            case "1":
+                                System.out.println("You say: " + currentRoom.getNpcs().get(i).getDialogAns(0));
+                                credScore.giveFiveCred();
+                                break;
+                            case "2":
+                                System.out.println("You say: " + currentRoom.getNpcs().get(i).getDialogAns(1));
+                                break;
+                            case "3":
+                                System.out.println("You say: " + currentRoom.getNpcs().get(i).getDialogAns(2));
+                                break;
+                            default:
+                                System.out.println("Wrong keypress.");
+                                break;
+                        }
+                        break;
+                    }
 
-                    } else if ("Villy".equals(command.getSecondWord())) {
-                        credScore.giveTenCred();
-                        currentRoom.removeNpc("Villy");
-                        System.out.println("\nVilly has left.");
-
-                    } else if ("Quizmaster".equals(command.getSecondWord())) {
-                        credScore.giveTwentyCred();
-                        currentRoom.removeNpc("Quizmaster");
-                        System.out.println("\nQuizmaster has left.");
+                    if (null != command.getSecondWord()) //Gives credibility, when NPC's are talked to.
+                    {
+                        switch (command.getSecondWord()) {
+                            case "Rick":
+                                credScore.giveFifteenCred();
+                                currentRoom.removeNpc("Rick");
+                                System.out.println("\nRick has left.");
+                                break;
+                                
+                            case "Villy":
+                                credScore.giveTenCred();
+                                currentRoom.removeNpc("Villy");
+                                System.out.println("\nVilly has left.");
+                                break;
+                                
+                            case "Quizmaster":
+                                // Question #2
+                                System.out.println(currentRoom.getNpcs().get(i).getName() + " says: " + currentRoom.getNpcs().get(i).getDialogSay(1));
+                                System.out.println(" [1] " + currentRoom.getNpcs().get(i).getDialogAns(0) + " [2] " + currentRoom.getNpcs().get(i).getDialogAns(1));
+                                while (true) {
+                                    switch (parser.getString()) {
+                                        case "1":
+                                            System.out.println("You say: " + currentRoom.getNpcs().get(i).getDialogAns(0));
+                                            credScore.giveTwentyCred();
+                                            break;
+                                        case "2":
+                                            System.out.println("You say: " + currentRoom.getNpcs().get(i).getDialogAns(1));
+                                            break;
+                                    }
+                                    break;
+                                }
+                                // Question #3
+                                System.out.println(currentRoom.getNpcs().get(i).getName() + " says: " + currentRoom.getNpcs().get(i).getDialogSay(2));
+                                System.out.println(" [1] " + currentRoom.getNpcs().get(i).getDialogAns(0) + " [2] " + currentRoom.getNpcs().get(i).getDialogAns(1));
+                                while (true) {
+                                    switch (parser.getString()) {
+                                        case "1":
+                                            System.out.println("You say: " + currentRoom.getNpcs().get(i).getDialogAns(0));
+                                            credScore.giveTwentyCred();
+                                            break;
+                                        case "2":
+                                            System.out.println("You say: " + currentRoom.getNpcs().get(i).getDialogAns(1));
+                                            break;
+                                    }
+                                    break;
+                                }
+                                // Saying goodbye.
+                                System.out.println(currentRoom.getNpcs().get(i).getName() + " says: " + currentRoom.getNpcs().get(i).getDialogSay(3));
+                                currentRoom.removeNpc("Quizmaster");
+                                System.out.println("\nQuizmaster has left.");
+                                break;
+                            case "NR1":
+                                System.out.println("I will consider your offer. Thank you.");
+                                break;
+                            case "NR2":
+                                System.out.println("I will consider your offer. Thank you.");
+                                break;
+                            case "NR3":
+                                System.out.println("I will consider your offer. Thank you.");
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 }
             }
@@ -236,7 +375,7 @@ public class Game {
         } else {
             inventory.remove(index);
             currentRoom.setItem(new Item(item));
-            
+
             System.out.println("You dropped: " + item);
         }
     }
@@ -264,10 +403,10 @@ public class Game {
         } else if ("SolarPoster".equals(command.getSecondWord())) {
             credScore.giveFiveCred();
             System.out.println("\nInterrested in Solarpower?\n"
-                + "Here are some facts about it!\n"
-                + "#1: ...\n"
-                + "#2: ...\n"
-                + "If you want to learn more, look for Rick in the Science Area!");
+                    + "Here are some facts about it!\n"
+                    + "#1: ...\n"
+                    + "#2: ...\n"
+                    + "If you want to learn more, look for Rick in the Science Area!");
         } else if ("UN-Poster".equals(command.getSecondWord())) {
             credScore.giveFiveCred();
         } else if ("QuizPoster".equals(command.getSecondWord())) {
