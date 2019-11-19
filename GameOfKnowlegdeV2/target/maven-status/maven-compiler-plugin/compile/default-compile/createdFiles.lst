@@ -3,8 +3,8 @@ com\mycompany\gameofknowlegdev2\EndController.class
 com\mycompany\gameofknowlegdev2\QuizController.class
 com\mycompany\gameofknowlegdev2\ScienceController.class
 com\mycompany\gameofknowlegdev2\UNController.class
-com\mycompany\gameofknowlegdev2\PrimaryController.class
 com\mycompany\gameofknowlegdev2\App.class
-com\mycompany\gameofknowlegdev2\SecondaryController.class
 module-info.class
+com\mycompany\gameofknowlegdev2\ExpoController.class
+com\mycompany\gameofknowlegdev2\HomeController.class
 com\mycompany\gameofknowlegdev2\Play.class
