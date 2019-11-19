@@ -144,7 +144,7 @@ public class Game {
 
     }
 
-    private void goRoom(Command command) {
+    public void goRoom(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("Go where?");
         }
@@ -252,7 +252,7 @@ public class Game {
         parser.showCommands();
     }
 
-    private boolean quit(Command command) {
+    protected boolean quit(Command command) {
         if (command.hasSecondWord()) {
             System.out.println("Quit what?");
             return false;
@@ -262,7 +262,7 @@ public class Game {
     }
 
     // Credibility Score
-    private void showCred(Command command) {
+    protected void showCred(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println(credScore.getCredScore());
         }
