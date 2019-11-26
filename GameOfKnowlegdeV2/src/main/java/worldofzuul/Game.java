@@ -419,7 +419,7 @@ public class Game {
         }
     }
 
-    private void getItem(Command command) {
+    public void getItem(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("Get what?");
             return;

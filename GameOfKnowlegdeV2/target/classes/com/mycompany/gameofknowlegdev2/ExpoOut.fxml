@@ -11,23 +11,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" onKeyPressed="#showRoomText" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.ScienceController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.ExpoOutController">
    <children>
       <ImageView fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@ScienceV2.png" />
-         </image></ImageView>
-      <Button fx:id="goBackScience" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back" />
-      <ImageView fx:id="rickClick" fitHeight="72.0" fitWidth="83.0" layoutX="144.0" layoutY="149.0" onMouseClicked="#talk" pickOnBounds="true" preserveRatio="true" />
+            <Image url="@75388385_555642251648041_1609848755807322112_n.png" />
+         </image>
+      </ImageView>
       <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
          <children>
             <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="300.0">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
-               </cursor></TextArea>
+               </cursor>
+            </TextArea>
             <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="300.0" />
          </children>
       </HBox>
+      <Button fx:id="backBtn" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToHome" text="Back" />
+      <ImageView fx:id="posterOne" fitHeight="86.0" fitWidth="73.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="posterTwo" fitHeight="86.0" fitWidth="73.0" layoutX="105.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="posterThree" fitHeight="83.0" fitWidth="179.0" layoutX="407.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="enterBtn" layoutX="281.0" layoutY="66.0" mnemonicParsing="false" onAction="#switchToExpoMain" text="Enter" />
       <ProgressBar fx:id="credBar" layoutY="260.0" prefHeight="15.0" prefWidth="600.0" progress="0.32">
          <effect>
             <Glow level="0.75">

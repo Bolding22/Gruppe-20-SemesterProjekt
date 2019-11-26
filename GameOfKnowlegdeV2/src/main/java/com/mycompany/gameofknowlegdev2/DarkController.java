@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
@@ -23,39 +24,44 @@ import worldofzuul.Game;
  */
 public class DarkController implements Initializable {
 
+    @FXML
+    private TextArea roomTextArea;
+    @FXML
+    private TextArea dialogTextArea;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    @FXML
-    private ImageView switchPic;
-    
+    }
+
     private boolean light;
-    
+
     @FXML
     private Button GoOutsideBtn;
-    
+
     private Game game = new Game();
 
     @FXML
     private void switchToExpo() throws IOException {
-        App.setRoot("Expo");
+        App.setRoot("ExpoOut");
         game.goRoom(new Command(CommandWord.GO, "out"));
-        
+
     }
+
     @FXML
     private void turnOffLight() throws IOException {
-        if(light == true){
-        System.out.println("Light turned Off.");
-        light = false;
-        App.setRoot("Dark");
-        } else if(light == false) {
-            System.out.println("Light turned On.");
+        if (light == false) {
             light = true;
             App.setRoot("Home");
+            System.out.println("Light turned On.");
         }
+    }
+
+    @FXML
+    public void setRoomTextArea(String s) {
+        this.roomTextArea.setText(s);
     }
 }

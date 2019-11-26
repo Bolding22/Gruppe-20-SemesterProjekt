@@ -5,9 +5,14 @@
  */
 package com.mycompany.gameofknowlegdev2;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import worldofzuul.*;
 
 /**
@@ -15,14 +20,20 @@ import worldofzuul.*;
  *
  * @author wbold
  */
-public class QuizController implements Initializable {
+public class QuizController{
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    @FXML
+    private Button goBackBtn;
+    @FXML
+    private TextArea roomTextArea;
+    @FXML
+    private TextArea dialogTextArea;
+
+   
+
+    @FXML
+    private void switchToExpo(ActionEvent event) throws IOException {
+        App.setRoot("Expo");
+    }
     
 }
