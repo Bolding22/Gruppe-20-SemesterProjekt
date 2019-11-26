@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="275.0" fitWidth="600.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@75407618_2416844805234345_956226326165979136_n.png" />
+            <Image url="@DarkHome.png" />
          </image>
       </ImageView>
       <Button fx:id="GoOutsideBtn" layoutX="380.0" layoutY="125.0" mnemonicParsing="false" onAction="#switchToExpo" text="Go" />

@@ -14,13 +14,13 @@
    <children>
       <ImageView fx:id="BackgroundPic" fitHeight="275.0" fitWidth="600.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Testbillede.jpg" />
+            <Image url="@Home.jpg" />
          </image>
       </ImageView>
       <Button fx:id="GoBtn" layoutX="380.0" layoutY="125.0" mnemonicParsing="false" onAction="#switchToExpo" text="Go" />
       <ImageView fx:id="switchPic" fitHeight="25.0" fitWidth="20.0" layoutX="346.0" layoutY="100.0" onMouseClicked="#turnOffLight" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Unavngivet.png" />
+            <Image url="@Switch.png" />
          </image>
       </ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
