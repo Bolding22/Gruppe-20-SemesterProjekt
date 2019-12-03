@@ -17,8 +17,8 @@ public class Start {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Game start = new Game();
-        start.play();
+        Game game = Game.Instance();
+        game.play();
     }
 
 }

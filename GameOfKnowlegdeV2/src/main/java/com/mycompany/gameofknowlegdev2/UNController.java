@@ -12,10 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Shape;
 import javafx.stage.WindowEvent;
 import worldofzuul.*;
 
@@ -26,6 +28,7 @@ import worldofzuul.*;
  */
 public class UNController implements Pickupable {
 
+    Game game = Game.Instance();
     @FXML
     private Button backBtnUN;
     @FXML
@@ -36,11 +39,14 @@ public class UNController implements Pickupable {
     private ImageView talkUN;
     @FXML
     private Tooltip tooltipTest;
+    @FXML 
+    private Shape rectangleShape;
 
 
     @FXML
     private void switchToExpo(ActionEvent event) throws IOException {
         App.setRoot("Expo");
+        game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
@@ -61,4 +67,7 @@ public class UNController implements Pickupable {
     private void backTooltip(WindowEvent event) {
     }
     
-}
+
+   }
+        
+

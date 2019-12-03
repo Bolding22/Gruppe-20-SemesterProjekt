@@ -15,6 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import worldofzuul.Command;
+import worldofzuul.CommandWord;
+import worldofzuul.Game;
 /**
  * FXML Controller class
  *
@@ -22,7 +25,7 @@ import javafx.scene.image.ImageView;
  */
 public class ExpoController {
 
-
+    Game game = Game.Instance();
     @FXML
     private Button backBtn;
     @FXML
@@ -45,23 +48,26 @@ public class ExpoController {
     @FXML
     private void goBackBtn() throws IOException{
         App.setRoot("ExpoOut");
+        game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
-    private void switchToScience(ActionEvent event) throws IOException {
-        App.setRoot("Science");
-       
-    }
+   private void switchToScience(ActionEvent event) throws IOException{
+       App.setRoot("Science");
+       game.goRoom(new Command(CommandWord.GO, "area2"));
+   }
 
     @FXML
     private void switchToQuiz(ActionEvent event) throws IOException {
         App.setRoot("Quiz");
+        game.goRoom(new Command(CommandWord.GO, "area3"));
          
     }
 
     @FXML
     private void switchToUN(ActionEvent event) throws IOException {
         App.setRoot("UN");
+        game.goRoom(new Command(CommandWord.GO, "area1"));
     }
 
 }

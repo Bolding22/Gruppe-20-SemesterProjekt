@@ -16,6 +16,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import worldofzuul.Command;
+import worldofzuul.CommandWord;
+import worldofzuul.Game;
 
 /**
  * FXML Controller class
@@ -24,12 +28,15 @@ import javafx.scene.input.KeyEvent;
  */
 public class ExpoOutController implements Initializable {
 
+    Game game = Game.Instance();
     @FXML
     private TextArea roomTextArea;
     @FXML
     private TextArea dialogTextArea;
     @FXML
     private Button backBtn;
+    @FXML
+    private Button goBtnScience;
     @FXML
     private ImageView posterOne;
     @FXML
@@ -54,11 +61,19 @@ public class ExpoOutController implements Initializable {
     @FXML
     private void switchToHome(ActionEvent event) throws IOException {
         App.setRoot("Home");
+        game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
     private void switchToExpoMain(ActionEvent event) throws IOException {
         App.setRoot("Expo");
+        game.goRoom(new Command(CommandWord.GO, "inside"));
     }
     
+    @FXML
+    private void printInventory(MouseEvent event) throws IOException{
+       game.printInventory();
+    
 }
+}
+

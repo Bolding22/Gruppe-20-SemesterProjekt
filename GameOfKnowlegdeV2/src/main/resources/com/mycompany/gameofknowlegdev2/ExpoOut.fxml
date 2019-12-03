@@ -20,6 +20,7 @@
       </ImageView>
       <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
          <children>
+            <Button fx:id="Inventory" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="122.0" text="Inventory" />
             <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="300.0">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />

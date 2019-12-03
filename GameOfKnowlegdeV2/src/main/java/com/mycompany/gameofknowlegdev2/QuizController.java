@@ -22,6 +22,7 @@ import worldofzuul.*;
  */
 public class QuizController{
 
+    Game game = Game.Instance();
     @FXML
     private Button goBackBtn;
     @FXML
@@ -34,6 +35,7 @@ public class QuizController{
     @FXML
     private void switchToExpo(ActionEvent event) throws IOException {
         App.setRoot("Expo");
+        game.goRoom(new Command(CommandWord.GO, "back"));
     }
     
 }
