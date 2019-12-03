@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import worldofzuul.*;
 
 public class HomeController {
@@ -14,7 +15,8 @@ public class HomeController {
 
     private boolean light = true;
 
-    private Game game = new Game();
+    Game game = Game.Instance();
+    
     @FXML
     private ImageView BackgroundPic;
     @FXML
@@ -27,6 +29,7 @@ public class HomeController {
     @FXML
     private void switchToExpo() throws IOException {
         App.setRoot("ExpoOut");
+        game.goRoom(new Command(CommandWord.GO, "out"));
     }
 
     @FXML
@@ -36,6 +39,11 @@ public class HomeController {
             App.setRoot("Dark");
             System.out.println("Light turned Off.");
         }
+    
     }
+    @FXML
+    private void printInventory(MouseEvent event) throws IOException{
+       game.printInventory();
 
+}
 }

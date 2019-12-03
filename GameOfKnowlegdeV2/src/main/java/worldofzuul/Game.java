@@ -8,22 +8,33 @@ public class Game {
     private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
     private Credibility credScore;
+    private static Game game;
+    
 
-    public Game() {
+    private Game(){ 
         credScore = new Credibility();
         createRooms();
         parser = new Parser();
-
     }
+    public static Game Instance(){
+	if(game == null)
+		game = new Game();
+        
+return game;
+    }                
+        
+
+    
 
     // Rooms
     private void createRooms() {
-        Room home, expo, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
+        Room home, expo, expoOut, scienceRoom, quizRoom, unRoom, meetingRoom, endRoom;
 
         home = new Room("You're Home, preparing for the Expo", "home");
         expo = new Room("You've arrived at the Expo! Wow! There's so many cool"
                 + " posters.\nDo you wanna know some more? "
                 + "Search and you will find.\n", "expo");
+        expoOut = new Room("You're outside the expo", "expoOut");
         scienceRoom = new Room("in the Science Area", "scienceRoom");
         quizRoom = new Room("in the Quiz Area", "quizRoom");
         unRoom = new Room("in the UN Area", "unRoom");
@@ -31,14 +42,19 @@ public class Game {
                 + "Look around and talk to the representatives from the different nations. "
                 + "Maybe you can teach them a thing or to.", "meetingRoom");
         endRoom = new Room("You've completed the game!", "endRoom");
+        
         currentRoom = home;
 
-        home.setExit("out", expo);
-
+        home.setExit("out", expoOut);
+        
+        expoOut.setExit("back", home);
+        expoOut.setExit("inside", expo);
+        
         expo.setExit("area1", unRoom);
         expo.setExit("area2", scienceRoom);
         expo.setExit("area3", quizRoom);
-        expo.setExit("next", meetingRoom);
+        quizRoom.setExit("next", meetingRoom);
+        expo.setExit("back", expoOut);
 
         unRoom.setExit("back", expo);
 
@@ -463,7 +479,7 @@ public class Game {
     }
 
     // Inventory
-    private void printInventory() {
+    public void printInventory() {
         String output = "";
         for (int i = 0; i < inventory.size(); i++) {
             output += inventory.get(i).getName() + " ";

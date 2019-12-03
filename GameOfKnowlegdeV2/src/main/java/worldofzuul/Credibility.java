@@ -11,10 +11,10 @@ package worldofzuul;
  */
 public class Credibility {
 
-    private int credScore;
-    private final int max = 100;
-    private final int min = 0;
-    private boolean exist = false;
+    public int credScore;
+    public final int max = 100;
+    public final int min = 0;
+    public boolean exist = false;
 
     public Credibility() {
         credScore = min;

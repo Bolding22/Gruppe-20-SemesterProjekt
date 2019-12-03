@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
 import worldofzuul.Game;
@@ -42,7 +43,7 @@ public class DarkController implements Initializable {
     @FXML
     private Button GoOutsideBtn;
 
-    private Game game = new Game();
+    Game game = Game.Instance();
 
     @FXML
     private void switchToExpo() throws IOException {
@@ -64,4 +65,9 @@ public class DarkController implements Initializable {
     public void setRoomTextArea(String s) {
         this.roomTextArea.setText(s);
     }
+    
+    @FXML
+    private void printInventory(MouseEvent event) throws IOException{
+       game.printInventory();
+}
 }

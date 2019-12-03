@@ -28,7 +28,7 @@ public class ScienceController implements Pickupable{
     @FXML
     private Button goBackScience;
     
-    Game game = new Game();
+    Game game = Game.Instance();
     @FXML
     private TextArea roomTextArea;
     @FXML
@@ -39,7 +39,19 @@ public class ScienceController implements Pickupable{
     @FXML
     private void switchToExpo(ActionEvent event) throws IOException {
         App.setRoot("Expo");
+        game.goRoom(new Command(CommandWord.GO, "back"));
     }
+
+   @FXML
+   private void pickUpItem(MouseEvent event) throws IOException{
+       game.getItem(new Command(CommandWord.GET, "Solarpanel"));
+   }
+   
+   @FXML
+   private void printInventory(MouseEvent event) throws IOException{
+       game.printInventory();
+       
+   }
 
     @FXML
     private void talk(MouseEvent event) {
@@ -57,10 +69,6 @@ public class ScienceController implements Pickupable{
                 + "I really hope you learned something and want to participate in the quiz! Have a great day!");
     }
 
-    private void pickUpItem(MouseEvent event) {
-        Command command = new Command(CommandWord.GET, "SolarPanel");
-        game.getItem(command);
-    }
 
     @FXML
     private void showRoomText(KeyEvent event) {
