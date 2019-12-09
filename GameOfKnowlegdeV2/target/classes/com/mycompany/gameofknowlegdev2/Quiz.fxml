@@ -48,9 +48,18 @@
       <Button fx:id="inventoryBtn" layoutY="375.0" mnemonicParsing="false" onAction="#printInventory" prefHeight="27.0" prefWidth="114.0" text="Inventory" />
       <Button fx:id="answerAbtn" alignment="CENTER" layoutX="114.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerA" prefHeight="27.0" prefWidth="65.0" text="A" visible="false" />
       <Button fx:id="answerBbtn" layoutX="179.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerB" prefHeight="27.0" prefWidth="65.0" text="B" visible="false" />
-      <ImageView fx:id="talkQuiz" fitHeight="135.0" fitWidth="75.0" layoutX="147.0" layoutY="71.0" onMouseClicked="#talk" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="talkQuiz" fitHeight="135.0" fitWidth="75.0" layoutX="147.0" layoutY="71.0" onMouseClicked="#talk" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></ImageView>
       <Button fx:id="nextQbtn" layoutX="385.0" layoutY="375.0" mnemonicParsing="false" onAction="#nextQuestion" text="Next Q &gt;&gt;" visible="false" />
-      <ImageView fx:id="portalMeeting" disable="true" fitHeight="72.0" fitWidth="83.0" layoutX="486.0" layoutY="114.0" onMouseClicked="#switchToMeeting" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="portalMeeting" disable="true" fitHeight="72.0" fitWidth="83.0" layoutX="486.0" layoutY="114.0" onMouseClicked="#switchToMeeting" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <effect>
+            <Glow />
+         </effect></ImageView>
       <Line endX="-100.0" endY="36.0" layoutX="548.0" layoutY="239.0" startX="-100.0" startY="21.0" stroke="#00fc26" strokeWidth="5.0" />
    </children>
 </AnchorPane>
