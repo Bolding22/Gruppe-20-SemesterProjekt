@@ -10,6 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.ExpoOutController">
    <children>
@@ -20,13 +21,15 @@
       </ImageView>
       <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <Button fx:id="Inventory" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="122.0" text="Inventory" />
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="300.0">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
             </TextArea>
-            <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="300.0" />
+            <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="355.0" />
          </children>
       </HBox>
       <Button fx:id="backBtn" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToHome" text="Back" />
@@ -43,5 +46,6 @@
             </Glow>
          </effect>
       </ProgressBar>
+      <Button fx:id="Inventory" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="122.0" text="Inventory" />
    </children>
 </AnchorPane>

@@ -11,10 +11,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
 import worldofzuul.Game;
+
 /**
  * FXML Controller class
  *
@@ -37,24 +39,26 @@ public class ExpoController {
     private TextArea dialogTextArea;
     @FXML
     private ProgressBar credBar;
-    
     @FXML
-    private void goBackBtn() throws IOException{
+    private ImageView ticTacToeIV;
+
+    @FXML
+    private void goBackBtn() throws IOException {
         App.setRoot("ExpoOut");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
-   private void switchToScience(ActionEvent event) throws IOException{
-       App.setRoot("Science");
-       game.goRoom(new Command(CommandWord.GO, "area2"));
-   }
+    private void switchToScience(ActionEvent event) throws IOException {
+        App.setRoot("Science");
+        game.goRoom(new Command(CommandWord.GO, "area2"));
+    }
 
     @FXML
     private void switchToQuiz(ActionEvent event) throws IOException {
         App.setRoot("Quiz");
         game.goRoom(new Command(CommandWord.GO, "area3"));
-         
+
     }
 
     @FXML
@@ -62,10 +66,19 @@ public class ExpoController {
         App.setRoot("UN");
         game.goRoom(new Command(CommandWord.GO, "area1"));
     }
-    
-     @FXML
+    @FXML
     private void getCredScore(MouseEvent event) {
         credBar.setProgress(game.getCredScore().getCredScore());
+    }
+    @FXML
+    private void printInventory(MouseEvent event) throws IOException {
+        roomTextArea.setText(game.printInventory());
+
+    }
+    @FXML
+    private void printTicTacToe(MouseEvent event) throws IOException {
+        roomTextArea.setText("Quit playing games already. Let's get on with\n"
+                + "the important stuff.");
     }
 
 }

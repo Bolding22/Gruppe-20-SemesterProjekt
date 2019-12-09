@@ -52,7 +52,7 @@ public class UNController implements Pickupable {
     @FXML
     private void talk(MouseEvent event) {
         dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "Villy")));
-        roomTextArea.setText("A: " + game.answerNPC("A")+ "\n" + "B: " + game.answerNPC("B"));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
         answerAbtn.setVisible(true);
         answerBbtn.setVisible(true);
         talkUN.setDisable(true);

@@ -82,6 +82,10 @@ public class QuizController {
             game.getCredScore().giveTwentyCred();
         }
         if (game.getCredScore().getCredScore() >= 0.75){
+        roomTextArea.setText(game.answerNPC("A") 
+                + "\n______________________________________"
+                + "\nCongrats. You've exceeded 75% Credability."
+                + "\nYou're now eligable to use the portal.");
         portalMeeting.setDisable(false);
         }
     }
@@ -111,7 +115,7 @@ public class QuizController {
         roomTextArea.clear();
         answerAbtn.setDisable(false);
         answerBbtn.setDisable(false);
-        roomTextArea.setText("A: " + game.answerNPC("A")+ "\n" + "B: " + game.answerNPC("B"));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
         if (i == 2){
             nextQbtn.setDisable(true);
         }
