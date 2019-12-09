@@ -34,7 +34,7 @@
       <ImageView fx:id="posterTwo" fitHeight="86.0" fitWidth="73.0" layoutX="105.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="posterThree" fitHeight="83.0" fitWidth="179.0" layoutX="407.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="enterBtn" layoutX="281.0" layoutY="66.0" mnemonicParsing="false" onAction="#switchToExpoMain" text="Enter" />
-      <ProgressBar fx:id="credBar" layoutY="260.0" prefHeight="15.0" prefWidth="600.0" progress="0.32">
+      <ProgressBar fx:id="credBar" layoutY="260.0" onMouseMoved="#getCredScore" prefHeight="15.0" prefWidth="600.0" progress="0.00">
          <effect>
             <Glow level="0.75">
                <input>

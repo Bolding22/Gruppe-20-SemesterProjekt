@@ -7,12 +7,10 @@ package com.mycompany.gameofknowlegdev2;
  */
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -26,7 +24,7 @@ import worldofzuul.Game;
  *
  * @author wbold
  */
-public class ExpoOutController implements Initializable {
+public class ExpoOutController{
 
     Game game = Game.Instance();
     @FXML
@@ -36,8 +34,6 @@ public class ExpoOutController implements Initializable {
     @FXML
     private Button backBtn;
     @FXML
-    private Button goBtnScience;
-    @FXML
     private ImageView posterOne;
     @FXML
     private ImageView posterTwo;
@@ -45,14 +41,11 @@ public class ExpoOutController implements Initializable {
     private ImageView posterThree;
     @FXML
     private Button enterBtn;
+    @FXML
+    private Button Inventory;
+    @FXML
+    private ProgressBar credBar;
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 
     @FXML
     private void showRoomText(KeyEvent event) {
@@ -75,5 +68,10 @@ public class ExpoOutController implements Initializable {
        game.printInventory();
     
 }
+
+    @FXML
+    private void getCredScore(MouseEvent event) {
+        credBar.setProgress(game.getCredScore().getCredScore());
+    }
 }
 

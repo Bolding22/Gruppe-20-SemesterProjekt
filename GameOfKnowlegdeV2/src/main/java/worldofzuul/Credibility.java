@@ -11,48 +11,44 @@ package worldofzuul;
  */
 public class Credibility {
 
-    public int credScore;
-    public final int max = 100;
-    public final int min = 0;
-    public boolean exist = false;
+    private double credScore;
+    private final double max = 1;
+    private final double min = 0;
+    private boolean exist = false;
 
     public Credibility() {
         credScore = min;
     }
 
     public void giveFiveCred() {
-        credScore += 5;
-        if (credScore > 95) {
+        credScore += 0.05;
+        if (credScore > 0.95) {
             credScore = max;
         }
     }
 
     public void giveTenCred() {
-        credScore += 10;
-        if (credScore > 95) {
+        credScore += +0.10;
+        if (credScore > 0.95) {
             credScore = max;
         }
     }
 
     public void giveFifteenCred() {
-        credScore += 15;
-        if (credScore > 95) {
+        credScore += 0.15;
+        if (credScore > 0.95) {
             credScore = max;
         }
     }
 
     public void giveTwentyCred() {
-        credScore += 20;
-        if (credScore > 95) {
+        credScore += 0.20;
+        if (credScore > 0.95) {
             credScore = max;
         }
     }
 
-    public void takeFiveCred() {
-        credScore -= 5;
-    }
-
-    public int getCredScore() {
+    public double getCredScore() {
         return credScore;
     }
 

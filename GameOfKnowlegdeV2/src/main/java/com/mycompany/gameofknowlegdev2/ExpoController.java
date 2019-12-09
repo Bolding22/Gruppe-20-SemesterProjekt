@@ -6,15 +6,12 @@
 package com.mycompany.gameofknowlegdev2;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
 import worldofzuul.Game;
@@ -35,15 +32,11 @@ public class ExpoController {
     @FXML
     private Button goBtnQuiz;
     @FXML
-    private ImageView posterOne;
-    @FXML
-    private ImageView posterTwo;
-    @FXML
-    private ImageView posterThree;
-    @FXML
     private TextArea roomTextArea;
     @FXML
     private TextArea dialogTextArea;
+    @FXML
+    private ProgressBar credBar;
     
     @FXML
     private void goBackBtn() throws IOException{
@@ -68,6 +61,11 @@ public class ExpoController {
     private void switchToUN(ActionEvent event) throws IOException {
         App.setRoot("UN");
         game.goRoom(new Command(CommandWord.GO, "area1"));
+    }
+    
+     @FXML
+    private void getCredScore(MouseEvent event) {
+        credBar.setProgress(game.getCredScore().getCredScore());
     }
 
 }

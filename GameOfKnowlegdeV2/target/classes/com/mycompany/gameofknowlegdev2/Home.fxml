@@ -30,7 +30,7 @@
             <TextArea fx:id="dialogTextArea" prefHeight="125.0" prefWidth="300.0" />
          </children>
       </HBox>
-      <ProgressBar fx:id="credBar" layoutY="260.0" prefHeight="15.0" prefWidth="600.0" progress="0.32">
+      <ProgressBar fx:id="credBar" layoutY="260.0" onMouseMoved="#getCredScore" prefHeight="15.0" prefWidth="600.0" progress="0.0">
          <effect>
             <Glow level="0.75">
                <input>

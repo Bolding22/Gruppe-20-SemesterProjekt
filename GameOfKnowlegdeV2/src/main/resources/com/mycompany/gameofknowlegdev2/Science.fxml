@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" onKeyPressed="#showRoomText" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.ScienceController">
    <children>
@@ -18,19 +19,15 @@
          <image>
             <Image url="@ScienceV2.png" />
          </image></ImageView>
-      <Button fx:id="goBackScience" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back" />
-      <ImageView fx:id="rickClick" fitHeight="72.0" fitWidth="83.0" layoutX="144.0" layoutY="149.0" onMouseClicked="#talk" pickOnBounds="true" preserveRatio="true" />
-      <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
-         <children>
-            <Button fx:id="Inventory" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="114.0" text="Inventory" />
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="300.0">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextArea>
-            <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="300.0" />
-         </children>
-      </HBox>
-      <ProgressBar fx:id="credBar" layoutY="260.0" prefHeight="15.0" prefWidth="600.0" progress="0.32">
+      <Button fx:id="goBackScience" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <ImageView fx:id="rick" fitHeight="72.0" fitWidth="83.0" layoutX="144.0" layoutY="149.0" onMouseClicked="#talkRick" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></ImageView>
+      <ProgressBar fx:id="credBar" layoutY="260.0" onMouseMoved="#getCredScore" prefHeight="15.0" prefWidth="600.0" progress="0.0">
          <effect>
             <Glow level="0.75">
                <input>
@@ -44,5 +41,28 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Rectangle>
+      <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
+         <children>
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextArea>
+            <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="355.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextArea>
+         </children>
+      </HBox>
+      <Button fx:id="inventoryBtn" layoutY="375.0" mnemonicParsing="false" onAction="#printInventory" prefHeight="27.0" prefWidth="114.0" text="Inventory" />
+      <Button fx:id="answerAbtn" layoutX="114.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerA" prefHeight="27.0" prefWidth="65.0" text="A" visible="false" />
+      <Button fx:id="answerBbtn" layoutX="179.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerB" prefHeight="27.0" prefWidth="65.0" text="B" visible="false" />
+      <ImageView fx:id="jeff" fitHeight="72.0" fitWidth="83.0" layoutX="405.0" layoutY="149.0" onMouseClicked="#talkJeff" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
