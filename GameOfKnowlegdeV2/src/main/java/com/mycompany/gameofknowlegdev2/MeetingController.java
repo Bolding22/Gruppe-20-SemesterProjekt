@@ -48,11 +48,15 @@ public class MeetingController {
 
     @FXML
     private void switchToEnd(ActionEvent event) {
+        game.getScore().getPoint();
+        game.getScore().calcScore(game.getCredScore().getCredScore());
+        roomTextArea.setText(String.valueOf(game.getScore().getScore()));
     }
 
     @FXML
     private void talkNR1(MouseEvent event) {
-        this.dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR1")));
+        dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR1")));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B") + "\n" + "C: " + game.answerNPC("C"));
         answerAbtn.setVisible(true);
         answerBbtn.setVisible(true);
         answerCbtn.setVisible(true);
@@ -64,7 +68,8 @@ public class MeetingController {
 
     @FXML
     private void talkNR2(MouseEvent event) {
-        this.dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR2")));
+        dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR2")));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B") + "\n" + "C: " + game.answerNPC("C"));
         answerAbtn.setVisible(true);
         answerBbtn.setVisible(true);
         answerCbtn.setVisible(true);
@@ -76,7 +81,8 @@ public class MeetingController {
 
     @FXML
     private void talkNR3(MouseEvent event) {
-        this.dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR3")));
+        dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR3")));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B") + "\n" + "C: " + game.answerNPC("C"));
         answerAbtn.setVisible(true);
         answerBbtn.setVisible(true);
         answerCbtn.setVisible(true);
@@ -94,13 +100,20 @@ public class MeetingController {
     @FXML
     private void printAnswerA(ActionEvent event) {
         roomTextArea.setText(game.answerNPC("A"));
+        if (dialogTextArea.getText().equals(game.talkNpc(new Command(CommandWord.TALK, "NR1")))){
+            game.getScore().setPoint(game.getScore().getPoint() + 1000);
+        }
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
         answerCbtn.setDisable(true);
     }
-
+    
+    @FXML
     private void printAnswerB(ActionEvent event) {
         roomTextArea.setText(game.answerNPC("B"));
+        if (dialogTextArea.getText().equals(game.talkNpc(new Command(CommandWord.TALK, "NR2")))){
+            game.getScore().setPoint(game.getScore().getPoint() + 1000);
+        }
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
         answerCbtn.setDisable(true);
@@ -109,6 +122,9 @@ public class MeetingController {
     @FXML
     private void printAnswerC(ActionEvent event) {
         roomTextArea.setText(game.answerNPC("C"));
+        if (dialogTextArea.getText().equals(game.talkNpc(new Command(CommandWord.TALK, "NR3")))){
+            game.getScore().setPoint(game.getScore().getPoint() + 1000);
+        }
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
         answerCbtn.setDisable(true);

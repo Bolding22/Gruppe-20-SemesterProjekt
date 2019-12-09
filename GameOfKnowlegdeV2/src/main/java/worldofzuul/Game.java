@@ -9,6 +9,7 @@ public class Game {
     private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
     private Credibility credScore;
+    private Point score;
 
     private static Game game;
 
@@ -16,6 +17,7 @@ public class Game {
         credScore = new Credibility();
         createRooms();
         parser = new Parser();
+        score = new Point();
     }
 
     public static Game Instance() {
@@ -105,8 +107,8 @@ public class Game {
                 + "Sadly they are expensive and not so flexible.", 0);
         rick.setDialogSay("If you want to hear about that, you should talk Jeff", 1);
 
-        rick.setDialogAnswer("Wow. That sounds really cool!\n"
-                + "But why chose this over fossil fuels?", 0);
+        rick.setDialogAnswer("Wow. Thanks for the enlightenment!", 0);
+        rick.setDialogAnswer("...", 1);
 
         scienceRoom.addNpc(rick);
 
@@ -128,6 +130,7 @@ public class Game {
                 + "Solar energy and the consequences of fossil fuels.", 0);
 
         villy.setDialogAnswer("I'd love to help", 0);
+        villy.setDialogAnswer("...", 1);
 
         unRoom.addNpc(villy);
 
@@ -380,5 +383,8 @@ public class Game {
         return "Inventory contains: \n" + "| " + output;
 
     }
-
+// Score
+    public Point getScore() {
+        return score;
+    }
 }

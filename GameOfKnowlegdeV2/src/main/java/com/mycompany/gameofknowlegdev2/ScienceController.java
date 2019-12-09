@@ -64,6 +64,7 @@ public class ScienceController {
     @FXML
     private void talkRick(MouseEvent event) {
         dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "Rick")));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
         answerAbtn.setVisible(true);
         answerBbtn.setVisible(true);
         rick.setDisable(true);
@@ -73,6 +74,9 @@ public class ScienceController {
     @FXML
     private void talkJeff(MouseEvent event) {
         dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "Jeff")));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
+        answerAbtn.setDisable(false);
+        answerBbtn.setDisable(false);
         jeff.setDisable(true);
 
     }
