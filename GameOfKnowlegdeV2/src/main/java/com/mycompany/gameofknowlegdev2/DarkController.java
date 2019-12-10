@@ -8,6 +8,7 @@ package com.mycompany.gameofknowlegdev2;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -41,12 +42,12 @@ public class DarkController implements Initializable {
     private boolean light;
 
     @FXML
-    private Button GoOutsideBtn;
+    private ImageView GoOutsideBtn;
 
     Game game = Game.Instance();
 
     @FXML
-    private void switchToExpo() throws IOException {
+    private void switchToExpo(MouseEvent event) throws IOException {
         App.setRoot("ExpoOut");
         game.goRoom(new Command(CommandWord.GO, "out"));
 

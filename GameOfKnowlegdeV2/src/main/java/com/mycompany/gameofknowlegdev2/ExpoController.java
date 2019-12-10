@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
 import worldofzuul.Game;
@@ -27,13 +28,13 @@ public class ExpoController {
 
     Game game = Game.Instance();
     @FXML
-    private Button backBtn;
+    private ImageView backBtn;
     @FXML
-    private Button goBtnUN;
+    private ImageView goBtnUN;
     @FXML
-    private Button goBtnScience;
+    private ImageView goBtnScience;
     @FXML
-    private Button goBtnQuiz;
+    private ImageView goBtnQuiz;
     @FXML
     private ImageView posterOne;
     @FXML
@@ -46,26 +47,26 @@ public class ExpoController {
     private TextArea dialogTextArea;
     
     @FXML
-    private void goBackBtn() throws IOException{
+    private void goBackBtn(MouseEvent event) throws IOException{
         App.setRoot("ExpoOut");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
-   private void switchToScience(ActionEvent event) throws IOException{
+   private void switchToScience(MouseEvent event) throws IOException{
        App.setRoot("Science");
        game.goRoom(new Command(CommandWord.GO, "area2"));
    }
 
     @FXML
-    private void switchToQuiz(ActionEvent event) throws IOException {
+    private void switchToQuiz(MouseEvent event) throws IOException {
         App.setRoot("Quiz");
         game.goRoom(new Command(CommandWord.GO, "area3"));
          
     }
 
     @FXML
-    private void switchToUN(ActionEvent event) throws IOException {
+    private void switchToUN(MouseEvent event) throws IOException {
         App.setRoot("UN");
         game.goRoom(new Command(CommandWord.GO, "area1"));
     }

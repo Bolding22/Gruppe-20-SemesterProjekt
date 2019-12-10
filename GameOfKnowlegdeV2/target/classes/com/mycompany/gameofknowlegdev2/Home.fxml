@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextArea?>
@@ -12,16 +13,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.HomeController">
    <children>
-      <ImageView fx:id="BackgroundPic" fitHeight="275.0" fitWidth="600.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="BackgroundPic" fitHeight="280.0" fitWidth="600.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Home.jpg" />
+            <Image url="@Homev2.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="GoBtn" layoutX="380.0" layoutY="125.0" mnemonicParsing="false" onAction="#switchToExpo" text="Go" />
-      <ImageView fx:id="switchPic" fitHeight="25.0" fitWidth="20.0" layoutX="346.0" layoutY="100.0" onMouseClicked="#turnOffLight" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="switchPic" fitHeight="15.0" fitWidth="13.0" layoutX="332.0" layoutY="105.0" onMouseClicked="#turnOffLight" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Switch.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
       </ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
@@ -39,5 +42,9 @@
             </Glow>
          </effect>
       </ProgressBar>
+      <ImageView fx:id="GoBtn" fitHeight="93.0" fitWidth="65.0" layoutX="348.0" layoutY="66.0" onMouseClicked="#switchToExpo" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></ImageView>
    </children>
 </AnchorPane>
