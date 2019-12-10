@@ -16,7 +16,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.ExpoOutController">
    <children>
-      <ImageView fx:id="enterExpo" fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="expoOut" fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@ExpoOut.png" />
          </image>
@@ -34,7 +34,6 @@
             <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="355.0" />
          </children>
       </HBox>
-      <Button fx:id="backBtn" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToHome" text="Back" />
       <ImageView fx:id="posterUN" fitHeight="86.0" fitWidth="73.0" layoutX="15.0" layoutY="11.0" onMouseClicked="#showUNPoster" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@unposter.png" />
@@ -47,7 +46,6 @@
          <image>
             <Image url="@solarposter.png" />
          </image></ImageView>
-      <Button fx:id="enterBtn" layoutX="281.0" layoutY="66.0" mnemonicParsing="false" onAction="#switchToExpoMain" text="Enter" />
       <ProgressBar fx:id="credBar" layoutY="260.0" onMouseMoved="#getCredScore" prefHeight="15.0" prefWidth="600.0" progress="0.00">
          <effect>
             <Glow level="0.75">

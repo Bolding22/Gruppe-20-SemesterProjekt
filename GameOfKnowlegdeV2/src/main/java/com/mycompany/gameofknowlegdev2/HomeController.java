@@ -32,7 +32,7 @@ public class HomeController {
     private ProgressBar credBar;
 
     @FXML
-    private void switchToExpo() throws IOException {
+    private void switchToExpo(MouseEvent event) throws IOException {
         App.setRoot("ExpoOut");
         game.goRoom(new Command(CommandWord.GO, "out"));
     }

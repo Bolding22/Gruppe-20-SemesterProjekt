@@ -35,8 +35,6 @@ public class ExpoOutController{
     @FXML
     private ImageView backBtn;
     @FXML
-    private Button enterBtn;
-    @FXML
     private Button Inventory;
     @FXML
     private ProgressBar credBar;
@@ -44,6 +42,7 @@ public class ExpoOutController{
     private ImageView posterUN;
     @FXML
     private ImageView enterExpo;
+    @FXML
     private ImageView posterQuiz;
     @FXML
     private ImageView posterSolar;
@@ -57,6 +56,8 @@ public class ExpoOutController{
     private Button closePoster;
     @FXML
     private StackPane posterPane;
+    @FXML
+    private ImageView expoOut;
 
 
     @FXML
