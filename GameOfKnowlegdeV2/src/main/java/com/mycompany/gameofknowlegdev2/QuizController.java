@@ -78,8 +78,8 @@ public class QuizController {
         roomTextArea.setText(game.answerNPC("A"));
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
-        if (i == 0 | i == 2){
-            game.getCredScore().giveTwentyCred();
+        if (i == 0 | i == 3){
+            game.getCredScore().giveFifteenCred();
         }
         if (game.getCredScore().getCredScore() >= 0.75){
         roomTextArea.setText(game.answerNPC("A") 
@@ -95,8 +95,8 @@ public class QuizController {
         roomTextArea.setText(game.answerNPC("B"));
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
-        if (i == 1){
-            game.getCredScore().giveTwentyCred();
+        if (i == 1 | i == 2){
+            game.getCredScore().giveFifteenCred();
         }
         if (game.getCredScore().getCredScore() >= 0.75){
         portalMeeting.setDisable(false);
@@ -116,7 +116,7 @@ public class QuizController {
         answerAbtn.setDisable(false);
         answerBbtn.setDisable(false);
         roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
-        if (i == 2){
+        if (i == 3){
             nextQbtn.setDisable(true);
         }
     }

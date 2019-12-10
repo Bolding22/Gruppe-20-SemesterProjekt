@@ -136,10 +136,10 @@ public class Game {
         //NPC Quizmaster
         Npc quizMaster = new Npc("Quizmaster", ", who will be testing your knowlegde", 4, 2);
 
-        quizMaster.setDialogSay("Question #1\n ", 0);
-        quizMaster.setDialogSay("Question #2\n What does...?", 1);
-        quizMaster.setDialogSay("Question #3\n What does...?", 2);
-        quizMaster.setDialogSay("Thanks for participating. It's lovely to see such brilliant minds.", 3);
+        quizMaster.setDialogSay("Question #1\n Solar Energy is both cheaper and faster to deploy, than fossil fuels.", 0);
+        quizMaster.setDialogSay("Question #2\n Greenhouse gasses helps the world keep a stable temperature.", 1);
+        quizMaster.setDialogSay("Question #3\n The U.S. are by far the biggest user of Solar Energy in the world.", 2);
+        quizMaster.setDialogSay("Question #4\n Photovoltiac panels are even able to work in a low light setting.", 3);
 
         quizMaster.setDialogAnswer("True.", 0);
         quizMaster.setDialogAnswer("False.", 1);
@@ -305,6 +305,8 @@ public class Game {
                     output = currentRoom.getNpcs().get(i).getDialogSay(1);
                 } else if (command.getSecondWord().equals(currentRoom.getNpcs().get(i).getName() + "2")) {
                     output = currentRoom.getNpcs().get(i).getDialogSay(2);
+                } else if (command.getSecondWord().equals(currentRoom.getNpcs().get(i).getName() + "3")) {
+                    output = currentRoom.getNpcs().get(i).getDialogSay(3);
                 }
             }
         }

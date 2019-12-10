@@ -41,13 +41,6 @@ public class Credibility {
         }
     }
 
-    public void giveTwentyCred() {
-        credScore += 0.20;
-        if (credScore > 0.95) {
-            credScore = max;
-        }
-    }
-
     public double getCredScore() {
         return credScore;
     }

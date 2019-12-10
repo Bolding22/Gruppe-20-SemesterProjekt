@@ -89,6 +89,7 @@ public class ExpoOutController{
 
     @FXML
     private void showUNPoster(MouseEvent event) {
+        game.getCredScore().giveFiveCred();
         posterPane.setVisible(true);
         posterUNBig.setVisible(true);
         closePoster.setVisible(true);
@@ -96,6 +97,7 @@ public class ExpoOutController{
 
     @FXML
     private void showQuizPoster(MouseEvent event) {
+        game.getCredScore().giveFiveCred();
         posterPane.setVisible(true);
         posterQuizBig.setVisible(true);
         closePoster.setVisible(true);
@@ -103,6 +105,7 @@ public class ExpoOutController{
 
     @FXML
     private void showSolarPoster(MouseEvent event) {
+        game.getCredScore().giveTenCred();
         posterPane.setVisible(true);
         posterSolarBig.setVisible(true);
         closePoster.setVisible(true);
