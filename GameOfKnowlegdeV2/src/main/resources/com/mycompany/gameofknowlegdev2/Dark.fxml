@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextArea?>
@@ -12,16 +13,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="275.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.DarkController">
    <children>
-      <ImageView fitHeight="275.0" fitWidth="600.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Dark" fitHeight="279.0" fitWidth="600.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@DarkHome.png" />
+            <Image url="@Homev2dark.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="GoOutsideBtn" layoutX="380.0" layoutY="125.0" mnemonicParsing="false" onAction="#switchToExpo" text="Go" />
-      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="346.0" layoutY="100.0" onMouseClicked="#turnOffLight" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="27.0" fitWidth="9.0" layoutX="332.0" layoutY="102.0" onMouseClicked="#turnOffLight" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@DarkButton.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
       </ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
@@ -39,5 +42,9 @@
             </Glow>
          </effect>
       </ProgressBar>
+      <ImageView fx:id="GoOutsideBtn" fitHeight="94.0" fitWidth="66.0" layoutX="348.0" layoutY="65.0" onMouseClicked="#switchToExpo" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></ImageView>
    </children>
 </AnchorPane>

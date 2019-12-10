@@ -34,7 +34,7 @@ public class ExpoOutController implements Initializable {
     @FXML
     private TextArea dialogTextArea;
     @FXML
-    private Button backBtn;
+    private ImageView backBtn;
     @FXML
     private Button goBtnScience;
     @FXML
@@ -44,7 +44,7 @@ public class ExpoOutController implements Initializable {
     @FXML
     private ImageView posterThree;
     @FXML
-    private Button enterBtn;
+    private ImageView enterExpo;
 
     /**
      * Initializes the controller class.
@@ -59,13 +59,13 @@ public class ExpoOutController implements Initializable {
     }
 
     @FXML
-    private void switchToHome(ActionEvent event) throws IOException {
+    private void switchToHome(MouseEvent event) throws IOException {
         App.setRoot("Home");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
-    private void switchToExpoMain(ActionEvent event) throws IOException {
+    private void switchToExpoMain(MouseEvent event) throws IOException {
         App.setRoot("Expo");
         game.goRoom(new Command(CommandWord.GO, "inside"));
     }

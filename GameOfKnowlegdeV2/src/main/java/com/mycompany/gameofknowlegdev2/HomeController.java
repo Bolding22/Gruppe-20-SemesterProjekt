@@ -20,7 +20,7 @@ public class HomeController {
     @FXML
     private ImageView BackgroundPic;
     @FXML
-    private Button GoBtn;
+    private ImageView GoBtn;
     @FXML
     private TextArea roomTextArea;
     @FXML

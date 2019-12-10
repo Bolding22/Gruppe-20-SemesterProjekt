@@ -13,14 +13,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.ExpoOutController">
    <children>
-      <ImageView fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enterExpo" fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@ExpoOut.png" />
          </image>
       </ImageView>
       <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <Button fx:id="Inventory" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="122.0" text="Inventory" />
+            <Button fx:id="Inventory" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="122.0" text="Inventory" />
             <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="300.0">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
@@ -29,11 +29,9 @@
             <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="300.0" />
          </children>
       </HBox>
-      <Button fx:id="backBtn" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToHome" text="Back" />
       <ImageView fx:id="posterOne" fitHeight="86.0" fitWidth="73.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="posterTwo" fitHeight="86.0" fitWidth="73.0" layoutX="105.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="posterThree" fitHeight="83.0" fitWidth="179.0" layoutX="407.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="enterBtn" layoutX="281.0" layoutY="66.0" mnemonicParsing="false" onAction="#switchToExpoMain" text="Enter" />
       <ProgressBar fx:id="credBar" layoutY="260.0" prefHeight="15.0" prefWidth="600.0" progress="0.32">
          <effect>
             <Glow level="0.75">
@@ -43,5 +41,14 @@
             </Glow>
          </effect>
       </ProgressBar>
+      <ImageView fx:id="enterExpo" fitHeight="15.0" fitWidth="43.0" layoutX="284.0" layoutY="52.0" onMouseClicked="#switchToExpoMain" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="backBtn" fitHeight="21.0" fitWidth="244.0" layoutX="154.0" layoutY="239.0" onMouseClicked="#switchToHome" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
