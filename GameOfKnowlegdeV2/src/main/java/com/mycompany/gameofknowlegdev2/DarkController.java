@@ -65,6 +65,7 @@ public class DarkController implements Initializable {
         if (light == false) {
             light = true;
             App.setRoot("Home");
+            game.getScore().setPoint(100);
             System.out.println("Light turned On.");
         }
     }
