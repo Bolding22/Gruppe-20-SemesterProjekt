@@ -25,7 +25,7 @@ import worldofzuul.Game;
  *
  * @author wbold
  */
-public class DarkController implements Initializable {
+public class DarkController {
 
     @FXML
     private TextArea roomTextArea;
@@ -37,14 +37,6 @@ public class DarkController implements Initializable {
     private ProgressBar credBar;
     @FXML
     private ImageView Dark;
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
 
     private boolean light;
 
