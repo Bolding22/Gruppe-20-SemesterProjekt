@@ -19,7 +19,7 @@
          </cursor></ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're at the grand meeting!&#10;It's your time to shine. Talk with the re-&#10;presentatives and help them with their pro-&#10;blems. Your acquired knowledge might come&#10;in handy.">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>

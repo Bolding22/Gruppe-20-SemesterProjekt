@@ -23,7 +23,7 @@
       <Button fx:id="goBackBtn" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back" />
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're in the Quiz Room!&#10;Ready for a challenge?&#10;Answer the questions and reach the green&#10;checkpoint to open the portal.">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>

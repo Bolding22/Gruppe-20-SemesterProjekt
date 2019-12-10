@@ -43,7 +43,7 @@
       </Rectangle>
       <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're in the Science Room!&#10;Talk with Rick and Jeff. Surely they'll teach&#10;you a thing or two. And don't forget your&#10;souvenir! There is a free solarpanelmodel&#10;for everyone.">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>

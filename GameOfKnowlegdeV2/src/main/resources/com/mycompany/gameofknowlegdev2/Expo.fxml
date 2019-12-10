@@ -24,7 +24,7 @@
       </ImageView>
       <HBox layoutY="275.0" prefHeight="126.0" prefWidth="600.0">
          <children>
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're inside the Expo.&#10;Explore the different areas.&#10;&#10;Hint: Start in the UN-Room and finish in the&#10;Quiz-Room.">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>

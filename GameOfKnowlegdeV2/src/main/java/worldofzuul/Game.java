@@ -1,7 +1,6 @@
 package worldofzuul;
 
 import java.util.ArrayList;
-import javafx.event.ActionEvent;
 
 public class Game {
 
@@ -129,7 +128,7 @@ public class Game {
                 + "the Science Room, Rick and Jeff well tell you everything about\n"
                 + "Solar energy and the consequences of fossil fuels.", 0);
 
-        villy.setDialogAnswer("I'd love to help", 0);
+        villy.setDialogAnswer("Sure sounds exciting. Hope I can help!", 0);
         villy.setDialogAnswer("...", 1);
 
         unRoom.addNpc(villy);
@@ -137,7 +136,7 @@ public class Game {
         //NPC Quizmaster
         Npc quizMaster = new Npc("Quizmaster", ", who will be testing your knowlegde", 4, 2);
 
-        quizMaster.setDialogSay("Question #1\n What does...?", 0);
+        quizMaster.setDialogSay("Question #1\n ", 0);
         quizMaster.setDialogSay("Question #2\n What does...?", 1);
         quizMaster.setDialogSay("Question #3\n What does...?", 2);
         quizMaster.setDialogSay("Thanks for participating. It's lovely to see such brilliant minds.", 3);
