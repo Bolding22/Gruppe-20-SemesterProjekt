@@ -49,7 +49,7 @@ public class HomeController {
     }
     @FXML
     private void printInventory(MouseEvent event) throws IOException{
-       game.printInventory();
+       roomTextArea.setText(game.printInventory());
 
 }
 
