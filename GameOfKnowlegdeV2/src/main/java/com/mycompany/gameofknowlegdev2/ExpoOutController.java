@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
 import worldofzuul.Game;
@@ -34,17 +35,27 @@ public class ExpoOutController{
     @FXML
     private Button backBtn;
     @FXML
-    private ImageView posterOne;
-    @FXML
-    private ImageView posterTwo;
-    @FXML
-    private ImageView posterThree;
-    @FXML
     private Button enterBtn;
     @FXML
     private Button Inventory;
     @FXML
     private ProgressBar credBar;
+    @FXML
+    private ImageView posterUN;
+    @FXML
+    private ImageView posterQuiz;
+    @FXML
+    private ImageView posterSolar;
+    @FXML
+    private ImageView posterUNBig;
+    @FXML
+    private ImageView posterQuizBig;
+    @FXML
+    private ImageView posterSolarBig;
+    @FXML
+    private Button closePoster;
+    @FXML
+    private StackPane posterPane;
 
 
     @FXML
@@ -72,6 +83,36 @@ public class ExpoOutController{
     @FXML
     private void getCredScore(MouseEvent event) {
         credBar.setProgress(game.getCredScore().getCredScore());
+    }
+
+    @FXML
+    private void showUNPoster(MouseEvent event) {
+        posterPane.setVisible(true);
+        posterUNBig.setVisible(true);
+        closePoster.setVisible(true);
+    }
+
+    @FXML
+    private void showQuizPoster(MouseEvent event) {
+        posterPane.setVisible(true);
+        posterQuizBig.setVisible(true);
+        closePoster.setVisible(true);
+    }
+
+    @FXML
+    private void showSolarPoster(MouseEvent event) {
+        posterPane.setVisible(true);
+        posterSolarBig.setVisible(true);
+        closePoster.setVisible(true);
+    }
+
+    @FXML
+    private void closePoster(ActionEvent event) {
+        posterQuizBig.setVisible(false);
+        posterSolarBig.setVisible(false);
+        posterUNBig.setVisible(false);
+        closePoster.setVisible(false);
+        posterPane.setVisible(false);
     }
 }
 
