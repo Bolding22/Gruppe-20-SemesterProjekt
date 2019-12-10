@@ -6,19 +6,14 @@
 package com.mycompany.gameofknowlegdev2;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Shape;
-import javafx.stage.WindowEvent;
+import javafx.scene.layout.AnchorPane;
 import worldofzuul.*;
 
 /**
@@ -38,10 +33,15 @@ public class UNController implements Pickupable {
     @FXML
     private ImageView talkUN;
     @FXML
-    private Tooltip tooltipTest;
-    @FXML 
-    private Shape rectangleShape;
-
+    private ProgressBar credBar;
+    @FXML
+    private Button inventoryBtn;
+    @FXML
+    private Button answerAbtn;
+    @FXML
+    private Button answerBbtn;
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private void switchToExpo(ActionEvent event) throws IOException {
@@ -51,23 +51,36 @@ public class UNController implements Pickupable {
 
     @FXML
     private void talk(MouseEvent event) {
-        dialogTextArea.setText("Hello there!\n"
-                + "My name is Villy and I’m here to represent The UN and tell you a bit about our global goals for sustainable development.\n"
-                + "There are 17 global goals which covers everything from ending poverty to making sure everyone has sustainable energy.\n"
-                + "And you might be surprised to hear this.\n"
-                + "But all 193 members of The UN has agreed to work towards making these goals before 2030.\n"
-                + "Today I would like to give you some extra knowledge on the 7th goal.\n"
-                + "Goal number 7 is all about affordable and clean energy and making sure that everyone has ascess to it.\n"
-                + "The overall goal is to get rid of the energy produced by fossil fuels and replace them with renewable energy like solar power!\n"
-                + "I even heard that there is a guy here today that can tell you everything about solar energy! You should go see him!\n"
-                + "Have a nice day!");
+        dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "Villy")));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
+        answerAbtn.setVisible(true);
+        answerBbtn.setVisible(true);
+        talkUN.setDisable(true);
     }
 
     @FXML
-    private void backTooltip(WindowEvent event) {
+    private void printInventory(ActionEvent event) {
+        roomTextArea.setText(game.printInventory());
     }
-    
 
-   }
-        
+    @FXML
+    private void printAnswerA(ActionEvent event) {
+        roomTextArea.setText(game.answerNPC("A"));
+        answerAbtn.setDisable(true);
+        answerBbtn.setDisable(true);
+        game.getCredScore().giveFiveCred();
+    }
 
+    @FXML
+    private void printAnswerB(ActionEvent event) {
+        roomTextArea.setText(game.answerNPC("B"));
+        answerAbtn.setDisable(true);
+        answerBbtn.setDisable(true);
+    }
+
+    @FXML
+    private void getCredScore(MouseEvent event) {
+        credBar.setProgress(game.getCredScore().getCredScore());
+    }
+
+}

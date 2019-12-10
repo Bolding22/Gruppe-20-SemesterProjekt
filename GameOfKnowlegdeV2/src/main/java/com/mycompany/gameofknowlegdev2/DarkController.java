@@ -12,8 +12,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
@@ -30,6 +30,10 @@ public class DarkController implements Initializable {
     private TextArea roomTextArea;
     @FXML
     private TextArea dialogTextArea;
+    @FXML
+    private Button Inventory;
+    @FXML
+    private ProgressBar credBar;
 
     /**
      * Initializes the controller class.
@@ -62,7 +66,6 @@ public class DarkController implements Initializable {
         }
     }
 
-    @FXML
     public void setRoomTextArea(String s) {
         this.roomTextArea.setText(s);
     }
@@ -71,4 +74,9 @@ public class DarkController implements Initializable {
     private void printInventory(MouseEvent event) throws IOException{
        game.printInventory();
 }
+
+    @FXML
+    private void getCredScore(MouseEvent event) {
+        credBar.setProgress(game.getCredScore().getCredScore());
+    }
 }

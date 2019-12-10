@@ -3,6 +3,7 @@ package com.mycompany.gameofknowlegdev2;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -25,6 +26,10 @@ public class HomeController {
     private TextArea roomTextArea;
     @FXML
     private TextArea dialogTextArea;
+    @FXML
+    private Button Inventory;
+    @FXML
+    private ProgressBar credBar;
 
     @FXML
     private void switchToExpo() throws IOException {
@@ -37,6 +42,7 @@ public class HomeController {
         if (light == true) {
             light = false;
             App.setRoot("Dark");
+            game.getScore().setPoint(100);
             System.out.println("Light turned Off.");
         }
     
@@ -46,4 +52,9 @@ public class HomeController {
        game.printInventory();
 
 }
+
+    @FXML
+    private void getCredScore(MouseEvent event) {
+        credBar.setProgress(game.getCredScore().getCredScore());
+    }
 }

@@ -7,16 +7,15 @@ package com.mycompany.gameofknowlegdev2;
  */
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
 import worldofzuul.Game;
@@ -26,7 +25,7 @@ import worldofzuul.Game;
  *
  * @author wbold
  */
-public class ExpoOutController implements Initializable {
+public class ExpoOutController{
 
     Game game = Game.Instance();
     @FXML
@@ -36,23 +35,29 @@ public class ExpoOutController implements Initializable {
     @FXML
     private ImageView backBtn;
     @FXML
-    private Button goBtnScience;
+    private Button enterBtn;
     @FXML
-    private ImageView posterOne;
+    private Button Inventory;
     @FXML
-    private ImageView posterTwo;
+    private ProgressBar credBar;
     @FXML
-    private ImageView posterThree;
+    private ImageView posterUN;
     @FXML
     private ImageView enterExpo;
+    private ImageView posterQuiz;
+    @FXML
+    private ImageView posterSolar;
+    @FXML
+    private ImageView posterUNBig;
+    @FXML
+    private ImageView posterQuizBig;
+    @FXML
+    private ImageView posterSolarBig;
+    @FXML
+    private Button closePoster;
+    @FXML
+    private StackPane posterPane;
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 
     @FXML
     private void showRoomText(KeyEvent event) {
@@ -75,5 +80,40 @@ public class ExpoOutController implements Initializable {
        game.printInventory();
     
 }
+
+    @FXML
+    private void getCredScore(MouseEvent event) {
+        credBar.setProgress(game.getCredScore().getCredScore());
+    }
+
+    @FXML
+    private void showUNPoster(MouseEvent event) {
+        posterPane.setVisible(true);
+        posterUNBig.setVisible(true);
+        closePoster.setVisible(true);
+    }
+
+    @FXML
+    private void showQuizPoster(MouseEvent event) {
+        posterPane.setVisible(true);
+        posterQuizBig.setVisible(true);
+        closePoster.setVisible(true);
+    }
+
+    @FXML
+    private void showSolarPoster(MouseEvent event) {
+        posterPane.setVisible(true);
+        posterSolarBig.setVisible(true);
+        closePoster.setVisible(true);
+    }
+
+    @FXML
+    private void closePoster(ActionEvent event) {
+        posterQuizBig.setVisible(false);
+        posterSolarBig.setVisible(false);
+        posterUNBig.setVisible(false);
+        closePoster.setVisible(false);
+        posterPane.setVisible(false);
+    }
 }
 
