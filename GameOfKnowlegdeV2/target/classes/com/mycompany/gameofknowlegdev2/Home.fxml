@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gameofknowlegdev2.HomeController">
    <children>
@@ -25,12 +26,14 @@
       </ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <Button fx:id="Inventory" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="119.0" text="Inventory" />
-            <TextArea fx:id="roomTextArea" prefHeight="125.0" prefWidth="300.0" />
-            <TextArea fx:id="dialogTextArea" prefHeight="125.0" prefWidth="300.0" />
+            <TextArea fx:id="roomTextArea" prefHeight="125.0" prefWidth="245.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextArea>
+            <TextArea fx:id="dialogTextArea" prefHeight="125.0" prefWidth="355.0" />
          </children>
       </HBox>
-      <ProgressBar fx:id="credBar" layoutY="260.0" prefHeight="15.0" prefWidth="600.0" progress="0.32">
+      <ProgressBar fx:id="credBar" layoutY="260.0" onMouseMoved="#getCredScore" prefHeight="15.0" prefWidth="600.0" progress="0.0">
          <effect>
             <Glow level="0.75">
                <input>
@@ -39,5 +42,6 @@
             </Glow>
          </effect>
       </ProgressBar>
+      <Button fx:id="Inventory" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="119.0" text="Inventory" />
    </children>
 </AnchorPane>

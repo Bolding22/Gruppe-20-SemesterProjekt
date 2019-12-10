@@ -6,18 +6,17 @@
 package com.mycompany.gameofknowlegdev2;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import worldofzuul.Command;
 import worldofzuul.CommandWord;
 import worldofzuul.Game;
+
 /**
  * FXML Controller class
  *
@@ -35,39 +34,51 @@ public class ExpoController {
     @FXML
     private Button goBtnQuiz;
     @FXML
-    private ImageView posterOne;
-    @FXML
-    private ImageView posterTwo;
-    @FXML
-    private ImageView posterThree;
-    @FXML
     private TextArea roomTextArea;
     @FXML
     private TextArea dialogTextArea;
-    
     @FXML
-    private void goBackBtn() throws IOException{
+    private ProgressBar credBar;
+    @FXML
+    private ImageView ticTacToeIV;
+
+    @FXML
+    private void goBackBtn() throws IOException {
         App.setRoot("ExpoOut");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
-   private void switchToScience(ActionEvent event) throws IOException{
-       App.setRoot("Science");
-       game.goRoom(new Command(CommandWord.GO, "area2"));
-   }
+    private void switchToScience(ActionEvent event) throws IOException {
+        App.setRoot("Science");
+        game.goRoom(new Command(CommandWord.GO, "area2"));
+    }
 
     @FXML
     private void switchToQuiz(ActionEvent event) throws IOException {
         App.setRoot("Quiz");
         game.goRoom(new Command(CommandWord.GO, "area3"));
-         
+
     }
 
     @FXML
     private void switchToUN(ActionEvent event) throws IOException {
         App.setRoot("UN");
         game.goRoom(new Command(CommandWord.GO, "area1"));
+    }
+    @FXML
+    private void getCredScore(MouseEvent event) {
+        credBar.setProgress(game.getCredScore().getCredScore());
+    }
+    @FXML
+    private void printInventory(MouseEvent event) throws IOException {
+        roomTextArea.setText(game.printInventory());
+
+    }
+    @FXML
+    private void printTicTacToe(MouseEvent event) throws IOException {
+        roomTextArea.setText("Quit playing games already. Let's get on with\n"
+                + "the important stuff.");
     }
 
 }
