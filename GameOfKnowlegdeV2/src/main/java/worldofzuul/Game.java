@@ -148,7 +148,12 @@ public class Game {
         //NPC Representatives at the meeting.
         Npc nr1 = new Npc("NR1", ", representative of ...", 1, 3);
 
-        nr1.setDialogSay("Economy", 0);
+        nr1.setDialogSay("In the sub-Saharan Africa we’re extremely exposed to\n"
+                + "poverty, in average making less than a dollar a day. Therefore,\n"
+                + "we cannot see any way for us, that it is possible to use modern\n"
+                + "energy. We can simply not afford to have it. In the village I\n"
+                + "am from, we want to use modern energy. How do you think you\n"
+                + "will be able to help us?", 0);
         nr1.setDialogAnswer("Economy Argument", 0);
         nr1.setDialogAnswer("Employment Argument", 1);
         nr1.setDialogAnswer("Bless them with your knowledge", 2);
@@ -157,14 +162,26 @@ public class Game {
         Npc nr2 = new Npc("NR2", ", representative of ...", 1, 3);
         meetingRoom.addNpc(nr2);
 
-        nr2.setDialogSay("Employment", 0);
+        nr2.setDialogSay(
+                "Where I am from, we have big problem with the young people when\n"
+                + "they either finish or drop out of school. Many of them are\n"
+                + "unemployed and have nothing to do. They are not helping in\n"
+                + "our society, but we also struggle to find work for them. At the\n"
+                + "same time, we have problems getting reliable energy to the whole\n"
+                + "city. Is there someway you can help us with this?", 0);
         nr2.setDialogAnswer("Economy Argument", 0);
         nr2.setDialogAnswer("Employment Argument", 1);
         nr2.setDialogAnswer("Bless them with your knowledge", 2);
 
         Npc nr3 = new Npc("NR3", ", representative of ...", 1, 3);
 
-        nr3.setDialogSay("Knowledge", 0);
+        nr3.setDialogSay(
+                "What is this “green energy” you are speaking of? In my village\n"
+                + "we use kerosene, to light up our houses, as well as for cooking,\n"
+                + "when the weather is problematic. I’d like to know more of this,\n"
+                + "but I will not implement something, that I do not know about.\n"
+                + "Also why is it better than the fossil energy, that all the rich\n"
+                + " people have?", 0);
         nr3.setDialogAnswer("Economy Argument", 0);
         nr3.setDialogAnswer("Employment Argument", 1);
         nr3.setDialogAnswer("Bless them with your knowledge", 2);
@@ -282,9 +299,9 @@ public class Game {
         if (!command.hasSecondWord()) {
             System.out.println(credScore.getCredScore());
         }
-        
+
     }
-    
+
     public Credibility getCredScore() {
         return credScore;
     }
@@ -332,6 +349,7 @@ public class Game {
         }
         return output;
     }
+
     // Items
     public void pickUpItem(Command command) {
         if (!command.hasSecondWord()) {
@@ -385,6 +403,7 @@ public class Game {
 
     }
 // Score
+
     public Point getScore() {
         return score;
     }
