@@ -19,7 +19,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
          <image>
-            <Image url="@MeetingRoom.png" />
+            <Image url="@79286323_934206013640979_8117585169801543680_n.png" />
          </image></ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
