@@ -41,16 +41,16 @@ public class ExpoController {
     private ImageView ticTacToeIV;
 
     @FXML
-    private void goBackBtn(MouseEvent event) throws IOException{
+    private void goBackBtn(MouseEvent event) throws IOException {
         App.setRoot("ExpoOut");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }
 
     @FXML
-   private void switchToScience(MouseEvent event) throws IOException{
-       App.setRoot("Science");
-       game.goRoom(new Command(CommandWord.GO, "area2"));
-   }
+    private void switchToScience(MouseEvent event) throws IOException {
+        App.setRoot("Science");
+        game.goRoom(new Command(CommandWord.GO, "area2"));
+    }
 
     @FXML
     private void switchToQuiz(MouseEvent event) throws IOException {
@@ -64,15 +64,18 @@ public class ExpoController {
         App.setRoot("UN");
         game.goRoom(new Command(CommandWord.GO, "area1"));
     }
+
     @FXML
     private void getCredScore(MouseEvent event) {
         credBar.setProgress(game.getCredScore().getCredScore());
     }
+
     @FXML
     private void printInventory(MouseEvent event) throws IOException {
         roomTextArea.setText(game.printInventory());
 
     }
+
     @FXML
     private void printTicTacToe(MouseEvent event) throws IOException {
         roomTextArea.setText("Quit playing games already. Let's get on with\n"

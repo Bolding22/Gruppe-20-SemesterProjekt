@@ -16,10 +16,11 @@
          </image>
       </ImageView>
       <Button fx:id="scoreBtn" layoutX="277.0" layoutY="301.0" mnemonicParsing="false" onAction="#showScore" text="Score" />
-      <Label fx:id="scoreLabel" layoutX="225.0" layoutY="154.0" textFill="WHITE">
+      <Label fx:id="scoreLabel" layoutX="171.0" layoutY="154.0" prefHeight="93.0" prefWidth="422.0" textFill="WHITE">
          <font>
             <Font size="64.0" />
          </font>
       </Label>
+      <Button fx:id="quitBtn" layoutX="557.0" layoutY="374.0" mnemonicParsing="false" onAction="#quit" text="QUIT" />
    </children>
 </AnchorPane>

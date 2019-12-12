@@ -17,7 +17,7 @@ public class HomeController {
     private boolean light = true;
 
     Game game = Game.Instance();
-    
+
     @FXML
     private ImageView BackgroundPic;
     @FXML
@@ -45,13 +45,14 @@ public class HomeController {
             game.getScore().setPoint(100);
             System.out.println("Light turned Off.");
         }
-    
-    }
-    @FXML
-    private void printInventory(MouseEvent event) throws IOException{
-       roomTextArea.setText(game.printInventory());
 
-}
+    }
+
+    @FXML
+    private void printInventory(MouseEvent event) throws IOException {
+        roomTextArea.setText(game.printInventory());
+
+    }
 
     @FXML
     private void getCredScore(MouseEvent event) {

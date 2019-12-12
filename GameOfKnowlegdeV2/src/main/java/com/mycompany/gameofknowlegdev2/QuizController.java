@@ -41,9 +41,9 @@ public class QuizController {
     private ImageView talkQuiz;
     @FXML
     private Button nextQbtn;
-    
+
     private int i = 0;
-    
+
     @FXML
     private ImageView portalMeeting;
 
@@ -52,7 +52,7 @@ public class QuizController {
         App.setRoot("Expo");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }
-    
+
     @FXML
     private void switchToMeeting(MouseEvent event) throws IOException {
         App.setRoot("Meeting");
@@ -62,7 +62,7 @@ public class QuizController {
     @FXML
     private void talk(MouseEvent event) {
         dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "Quizmaster")));
-        roomTextArea.setText("A: " + game.answerNPC("A")+ "\n" + "B: " + game.answerNPC("B"));
+        roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
         answerAbtn.setVisible(true);
         answerBbtn.setVisible(true);
         nextQbtn.setVisible(true);
@@ -78,15 +78,15 @@ public class QuizController {
         roomTextArea.setText(game.answerNPC("A"));
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
-        if (i == 0 | i == 3){
+        if (i == 0 | i == 3) {
             game.getCredScore().giveFifteenCred();
         }
-        if (game.getCredScore().getCredScore() >= 0.75){
-        roomTextArea.setText(game.answerNPC("A") 
-                + "\n______________________________________"
-                + "\nCongrats. You've exceeded 75% Credability."
-                + "\nYou're now eligable to use the portal.");
-        portalMeeting.setDisable(false);
+        if (game.getCredScore().getCredScore() >= 0.75) {
+            roomTextArea.setText(game.answerNPC("A")
+                    + "\n______________________________________"
+                    + "\nCongrats. You've exceeded 75% Credability."
+                    + "\nYou're now eligable to use the portal.");
+            portalMeeting.setDisable(false);
         }
     }
 
@@ -95,11 +95,11 @@ public class QuizController {
         roomTextArea.setText(game.answerNPC("B"));
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
-        if (i == 1 | i == 2){
+        if (i == 1 | i == 2) {
             game.getCredScore().giveFifteenCred();
         }
-        if (game.getCredScore().getCredScore() >= 0.75){
-        portalMeeting.setDisable(false);
+        if (game.getCredScore().getCredScore() >= 0.75) {
+            portalMeeting.setDisable(false);
         }
     }
 
@@ -116,9 +116,8 @@ public class QuizController {
         answerAbtn.setDisable(false);
         answerBbtn.setDisable(false);
         roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
-        if (i == 3){
+        if (i == 3) {
             nextQbtn.setDisable(true);
         }
     }
 }
-    

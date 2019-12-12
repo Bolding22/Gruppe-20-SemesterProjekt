@@ -5,7 +5,6 @@ package com.mycompany.gameofknowlegdev2;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +24,7 @@ import worldofzuul.Game;
  *
  * @author wbold
  */
-public class ExpoOutController{
+public class ExpoOutController {
 
     Game game = Game.Instance();
     @FXML
@@ -59,7 +58,6 @@ public class ExpoOutController{
     @FXML
     private ImageView expoOut;
 
-
     @FXML
     private void showRoomText(KeyEvent event) {
     }
@@ -75,12 +73,12 @@ public class ExpoOutController{
         App.setRoot("Expo");
         game.goRoom(new Command(CommandWord.GO, "inside"));
     }
-    
+
     @FXML
-    private void printInventory(MouseEvent event) throws IOException{
-       game.printInventory();
-    
-}
+    private void printInventory(MouseEvent event) throws IOException {
+        game.printInventory();
+
+    }
 
     @FXML
     private void getCredScore(MouseEvent event) {
@@ -120,4 +118,3 @@ public class ExpoOutController{
         posterPane.setVisible(false);
     }
 }
-

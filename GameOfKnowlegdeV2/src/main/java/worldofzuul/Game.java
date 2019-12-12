@@ -285,7 +285,7 @@ public class Game {
         parser.showCommands();
     }
 
-    protected boolean quit(Command command) {
+    public boolean quit(Command command) {
         if (command.hasSecondWord()) {
             System.out.println("Quit what?");
             return false;

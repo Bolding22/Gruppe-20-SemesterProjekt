@@ -57,11 +57,11 @@ public class DarkController {
             System.out.println("Light turned On.");
         }
     }
-    
+
     @FXML
-    private void printInventory(MouseEvent event) throws IOException{
-       roomTextArea.setText(game.printInventory());
-}
+    private void printInventory(MouseEvent event) throws IOException {
+        roomTextArea.setText(game.printInventory());
+    }
 
     @FXML
     private void getCredScore(MouseEvent event) {

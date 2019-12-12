@@ -17,7 +17,7 @@
    <children>
       <ImageView fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@78974284_672967429776601_2052723114533453824_n.png" />
+            <Image url="@79308348_603595057130418_7723800088245436416_n.png" />
          </image></ImageView>
       <Button fx:id="goBackScience" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back">
          <cursor>
