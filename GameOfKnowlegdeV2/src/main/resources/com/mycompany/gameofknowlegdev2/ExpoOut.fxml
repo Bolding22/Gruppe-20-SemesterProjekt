@@ -37,15 +37,24 @@
       <ImageView fx:id="posterUN" fitHeight="86.0" fitWidth="73.0" layoutX="15.0" layoutY="11.0" onMouseClicked="#showUNPoster" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@unposter.png" />
-         </image></ImageView>
+         </image>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></ImageView>
       <ImageView fx:id="posterQuiz" fitHeight="86.0" fitWidth="73.0" layoutX="106.0" layoutY="11.0" onMouseClicked="#showQuizPoster" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@quizposter.png" />
-         </image></ImageView>
+         </image>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></ImageView>
       <ImageView fx:id="posterSolar" fitHeight="87.0" fitWidth="179.0" layoutX="410.0" layoutY="10.0" onMouseClicked="#showSolarPoster" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@solarposter.png" />
-         </image></ImageView>
+         </image>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></ImageView>
       <ProgressBar fx:id="credBar" layoutY="260.0" onMouseMoved="#getCredScore" prefHeight="15.0" prefWidth="600.0" progress="0.00">
          <effect>
             <Glow level="0.75">
