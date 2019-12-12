@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -16,7 +17,10 @@
       <ImageView fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
-         </cursor></ImageView>
+         </cursor>
+         <image>
+            <Image url="@MeetingRoom.png" />
+         </image></ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
             <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="275.0" text="You're at the grand meeting!&#10;It's your time to shine. Talk with the represen-&#10;tatives and help them with their problems.&#10;Your acquired knowledge might come in handy.">
@@ -43,15 +47,15 @@
       <Button fx:id="answerAbtn" alignment="CENTER" layoutX="75.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerA" prefHeight="27.0" prefWidth="56.0" text="A" visible="false" />
       <Button fx:id="answerBbtn" layoutX="131.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerB" prefHeight="27.0" prefWidth="56.0" text="B" visible="false" />
       <Button fx:id="answerCbtn" layoutX="186.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerC" prefHeight="27.0" prefWidth="56.0" text="C" visible="false" />
-      <ImageView fx:id="nationRep3" fitHeight="72.0" fitWidth="83.0" layoutX="352.0" layoutY="102.0" onMouseClicked="#talkNR3" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="nationRep3" fitHeight="47.0" fitWidth="29.0" layoutX="404.0" layoutY="100.0" onMouseClicked="#talkNR3" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="nationRep2" fitHeight="72.0" fitWidth="83.0" layoutX="224.0" layoutY="102.0" onMouseClicked="#talkNR2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="nationRep2" fitHeight="47.0" fitWidth="29.0" layoutX="159.0" layoutY="154.0" onMouseClicked="#talkNR2" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="nationRep1" fitHeight="72.0" fitWidth="83.0" layoutX="90.0" layoutY="102.0" onMouseClicked="#talkNR1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="nationRep1" fitHeight="47.0" fitWidth="29.0" layoutX="68.0" layoutY="53.0" onMouseClicked="#talkNR1" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor></ImageView>
