@@ -5,6 +5,7 @@
  */
 package com.mycompany.gameofknowlegdev2;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -51,10 +52,8 @@ public class MeetingController {
     private Button closeBtn;
 
     @FXML
-    private void switchToEnd(ActionEvent event) {
-        game.getScore().getPoint();
-        game.getScore().calcScore(game.getCredScore().getCredScore());
-        roomTextArea.setText(String.valueOf(game.getScore().getScore()));
+    private void switchToEnd(ActionEvent event) throws IOException {
+        App.setRoot("End");
     }
 
     @FXML

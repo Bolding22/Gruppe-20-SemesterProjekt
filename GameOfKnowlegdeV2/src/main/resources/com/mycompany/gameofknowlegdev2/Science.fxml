@@ -17,7 +17,7 @@
    <children>
       <ImageView fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@ScienceV2.png" />
+            <Image url="@78974284_672967429776601_2052723114533453824_n.png" />
          </image></ImageView>
       <Button fx:id="goBackScience" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back">
          <cursor>
@@ -36,7 +36,7 @@
             </Glow>
          </effect>
       </ProgressBar>
-      <Rectangle fx:id="Solarpanel" arcHeight="5.0" arcWidth="5.0" fill="#680cf0" height="27.0" layoutX="378.0" layoutY="200.0" onMouseClicked="#pickUpItem" stroke="#bfbfbf" strokeType="INSIDE" width="20.0">
+      <Rectangle fx:id="Solarpanel" arcHeight="5.0" arcWidth="5.0" fill="#680cf0" height="27.0" layoutX="330.0" layoutY="169.0" onMouseClicked="#pickUpItem" stroke="#bfbfbf" strokeType="INSIDE" width="20.0">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
@@ -56,7 +56,7 @@
       <Button fx:id="inventoryBtn" layoutY="375.0" mnemonicParsing="false" onAction="#printInventory" prefHeight="27.0" prefWidth="114.0" text="Inventory" />
       <Button fx:id="answerAbtn" layoutX="114.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerA" prefHeight="27.0" prefWidth="65.0" text="A" visible="false" />
       <Button fx:id="answerBbtn" layoutX="179.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerB" prefHeight="27.0" prefWidth="65.0" text="B" visible="false" />
-      <ImageView fx:id="jeff" fitHeight="72.0" fitWidth="83.0" layoutX="405.0" layoutY="149.0" onMouseClicked="#talkJeff" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="jeff" fitHeight="115.0" fitWidth="50.0" layoutX="426.0" layoutY="139.0" onMouseClicked="#talkJeff" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
