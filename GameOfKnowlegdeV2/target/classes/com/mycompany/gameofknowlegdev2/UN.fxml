@@ -18,7 +18,6 @@
          <image>
             <Image url="@UN.png" />
          </image></ImageView>
-      <Button fx:id="backBtnUN" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back" />
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
             <TextArea fx:id="roomTextArea" prefHeight="125.0" prefWidth="245.0" text="You're in the UN-Room.&#10;Have a chat with Villy. Maybe make some&#10;coffee.">
@@ -47,5 +46,10 @@
       <Button fx:id="inventoryBtn" layoutY="375.0" mnemonicParsing="false" onAction="#printInventory" prefHeight="27.0" prefWidth="114.0" text="Inventory" />
       <Button fx:id="answerAbtn" alignment="CENTER" layoutX="114.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerA" prefHeight="27.0" prefWidth="65.0" text="A" visible="false" />
       <Button fx:id="answerBbtn" layoutX="179.0" layoutY="375.0" mnemonicParsing="false" onAction="#printAnswerB" prefHeight="27.0" prefWidth="65.0" text="B" visible="false" />
+      <ImageView fx:id="backBtnUN" fitHeight="54.0" fitWidth="59.0" layoutX="528.0" layoutY="134.0" onMouseClicked="#switchToExpo" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

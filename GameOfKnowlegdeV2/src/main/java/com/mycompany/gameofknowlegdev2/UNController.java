@@ -25,7 +25,7 @@ public class UNController implements Pickupable {
 
     Game game = Game.Instance();
     @FXML
-    private Button backBtnUN;
+    private ImageView backBtnUN;
     @FXML
     private TextArea roomTextArea;
     @FXML
@@ -44,7 +44,7 @@ public class UNController implements Pickupable {
     private AnchorPane anchorPane;
 
     @FXML
-    private void switchToExpo(ActionEvent event) throws IOException {
+    private void switchToExpo(MouseEvent event) throws IOException {
         App.setRoot("Expo");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }
