@@ -29,7 +29,7 @@
       </ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <TextArea fx:id="roomTextArea" prefHeight="125.0" prefWidth="245.0" text="You're currently home. &#10;Remember everything before you leave.">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're currently home. &#10;Remember everything before you leave.">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>

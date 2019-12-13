@@ -67,9 +67,8 @@ public class Game {
         meetingRoom.setExit("next", endRoom);
 
         // Create and add Items to rooms.
-        expo.setItem(new Item("SolarPoster"));
-        expo.setItem(new Item("UN-Poster"));
-        expo.setItem(new Item("QuizPoster"));
+        unRoom.setItem(new Item("Coffe Mug (Empty)"));
+        unRoom.setItem(new Item("Coffe Mug (Filled)"));
 
         scienceRoom.setItem(new Item("Solarpanel"));
 

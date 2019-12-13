@@ -42,6 +42,8 @@ public class UNController implements Pickupable {
     private Button answerBbtn;
     @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private ImageView cofffeeImage;
 
     @FXML
     private void switchToExpo(MouseEvent event) throws IOException {
@@ -81,6 +83,12 @@ public class UNController implements Pickupable {
     @FXML
     private void getCredScore(MouseEvent event) {
         credBar.setProgress(game.getCredScore().getCredScore());
+    }
+
+    @FXML
+    private void showCoffeeStatus(MouseEvent event) {
+        roomTextArea.setText(
+                "Damn. The coffee machine seems broken. Maybe some power will fix it.");
     }
 
 }
