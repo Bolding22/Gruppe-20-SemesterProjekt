@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.gameofknowlegdev2;
 
 import java.io.IOException;
@@ -53,8 +48,6 @@ public class DarkController {
         if (light == false) {
             light = true;
             App.setRoot("Home");
-            game.getScore().setPoint(100);
-            System.out.println("Light turned On.");
         }
     }
 

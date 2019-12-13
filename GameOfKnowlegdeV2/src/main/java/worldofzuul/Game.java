@@ -149,9 +149,9 @@ public class Game {
                 + "energy. We can simply not afford to have it. In the village I\n"
                 + "am from, we want to use modern energy. How do you think you\n"
                 + "will be able to help us?", 0);
-        nr1.setDialogAnswer("Economy Argument", 0);
-        nr1.setDialogAnswer("Employment Argument", 1);
-        nr1.setDialogAnswer("Bless them with your knowledge", 2);
+        nr1.setDialogAnswer("Talk about the economic benefits of smaller solar panels.", 0);
+        nr1.setDialogAnswer("Talk about the job opportunities a solar panel farm can create.", 1);
+        nr1.setDialogAnswer("Share your knowledge about Solar Power and fossil fuels", 2);
         meetingRoom.addNpc(nr1);
 
         Npc nr2 = new Npc("NR2", ", representative of ...", 1, 3);
@@ -164,9 +164,9 @@ public class Game {
                 + "our society, but we also struggle to find work for them. At the\n"
                 + "same time, we have problems getting reliable energy to the whole\n"
                 + "city. Is there someway you can help us with this?", 0);
-        nr2.setDialogAnswer("Economy Argument", 0);
-        nr2.setDialogAnswer("Employment Argument", 1);
-        nr2.setDialogAnswer("Bless them with your knowledge", 2);
+        nr2.setDialogAnswer("Talk about the economic benefits of smaller solar panels.", 0);
+        nr2.setDialogAnswer("Talk about the job opportunities a solar panel farm can create.", 1);
+        nr2.setDialogAnswer("Share your knowledge about Solar Power and fossil fuels", 2);
 
         Npc nr3 = new Npc("NR3", ", representative of ...", 1, 3);
 
@@ -177,9 +177,9 @@ public class Game {
                 + "but I will not implement something, that I do not know about.\n"
                 + "Also why is it better than the fossil energy, that all the rich\n"
                 + " people have?", 0);
-        nr3.setDialogAnswer("Economy Argument", 0);
-        nr3.setDialogAnswer("Employment Argument", 1);
-        nr3.setDialogAnswer("Bless them with your knowledge", 2);
+        nr3.setDialogAnswer("Talk about the economic benefits of smaller solar panels.", 0);
+        nr3.setDialogAnswer("Talk about the job opportunities a solar panel farm can create.", 1);
+        nr3.setDialogAnswer("Share your knowledge about Solar Power and fossil fuels", 2);
         meetingRoom.addNpc(nr3);
 
     }
@@ -203,7 +203,6 @@ public class Game {
 
     // Basic features
     public void play() {
-        printWelcome();
 
         boolean finished = false;
         while (!finished) {
@@ -211,30 +210,6 @@ public class Game {
             finished = processCommand(command);
         }
         System.out.println("Thank you for playing.  Goodbye.");
-    }
-
-    private void printWelcome() {
-        System.out.println();
-        System.out.println("Welcome to the Game of Knowledge!\n");
-        System.out.println("You are now playing Game of Knowledge!\n"
-                + "This game while guide you through the great aspects of reusable energy, "
-                + "\nhereby in particular energy provided by the sun."
-                + "\nYou will come along a lot of different features in this game, "
-                + "\nlearning how to use reusable energy, talking to different science people, "
-                + "\nmaybe even talk to the leader of a big gathering of the nations worldwide? 😉 "
-                + "\nWho knows.. Only YOU will set the boundaries - PLAY now and see how far you can come, "
-                + "\nor maybe even complete the game?"
-                + "\n"
-                + "\nGOOD LUCK!");
-        System.out.println();
-        System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
-        System.out.println("Type '" + CommandWord.GO + "' + route, to move to a new location.");
-        System.out.println("Type '" + CommandWord.TALK + "' + Name, to talk to people.");
-        System.out.println("Type '" + CommandWord.GET + "' + Itemname, to pick up and read/show items.");
-        System.out.println("Type '" + CommandWord.CREDIBILITY + "' to view your Credibility Score.");
-        System.out.println("Type '" + CommandWord.INVENTORY + "' to view your inventory.");
-        System.out.println();
-        System.out.println(currentRoom.getLongDescription());
     }
 
     private boolean processCommand(Command command) {
@@ -247,10 +222,7 @@ public class Game {
             return false;
         }
 
-        if (commandWord == CommandWord.HELP) {
-            printHelp();
-
-        } else if (commandWord == CommandWord.GO) {
+        if (commandWord == CommandWord.GO) {
             goRoom(command);
 
         } else if (commandWord == CommandWord.QUIT) {
@@ -270,14 +242,6 @@ public class Game {
         }
 
         return wantToQuit;
-    }
-
-    private void printHelp() {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
-        System.out.println();
-        System.out.println("Your command words are:");
-        parser.showCommands();
     }
 
     public boolean quit(Command command) {
@@ -363,29 +327,7 @@ public class Game {
             currentRoom.removeItem(item);
             System.out.println("You picked up: " + item);
         }
-        if (null != command.getSecondWord()) {
-            switch (command.getSecondWord()) {
-                case "Solarpanel":
-                    credScore.giveFiveCred();
-                    break;
-                case "SolarPoster":
-                    credScore.giveFiveCred();
-                    System.out.println("\nInterrested in Solarpower?\n"
-                            + "Here are some facts about it!\n"
-                            + "#1: ...\n"
-                            + "#2: ...\n"
-                            + "If you want to learn more, look for Rick in the Science Area!");
-                    break;
-                case "UN-Poster":
-                    credScore.giveFiveCred();
-                    break;
-                case "QuizPoster":
-                    credScore.giveFiveCred();
-                    break;
-                default:
-                    break;
-            }
-        }
+
     }
 
     // Inventory
@@ -401,11 +343,8 @@ public class Game {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
-    
-    
-    
-// Score
 
+// Score
     public Point getScore() {
         return score;
     }

@@ -1,10 +1,5 @@
 package com.mycompany.gameofknowlegdev2;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,6 +22,7 @@ import worldofzuul.Game;
 public class ExpoOutController {
 
     Game game = Game.Instance();
+
     @FXML
     private TextArea roomTextArea;
     @FXML
@@ -59,10 +55,6 @@ public class ExpoOutController {
     private ImageView expoOut;
 
     @FXML
-    private void showRoomText(KeyEvent event) {
-    }
-
-    @FXML
     private void switchToHome(MouseEvent event) throws IOException {
         App.setRoot("Home");
         game.goRoom(new Command(CommandWord.GO, "back"));
@@ -85,6 +77,7 @@ public class ExpoOutController {
         credBar.setProgress(game.getCredScore().getCredScore());
     }
 
+    // "setVisible" is used for pop-up effects.
     @FXML
     private void showUNPoster(MouseEvent event) {
         game.getCredScore().giveFiveCred();

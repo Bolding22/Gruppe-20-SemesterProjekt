@@ -1,10 +1,5 @@
 package com.mycompany.gameofknowlegdev2;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,12 +75,6 @@ public class ScienceController {
         answerAbtn.setDisable(false);
         answerBbtn.setDisable(false);
         jeff.setDisable(true);
-
-    }
-
-    @FXML
-    private void showRoomText(KeyEvent event) {
-        roomTextArea.setText("Test");
     }
 
     @FXML

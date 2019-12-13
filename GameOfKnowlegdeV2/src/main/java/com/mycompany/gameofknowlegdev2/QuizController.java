@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.gameofknowlegdev2;
 
 import java.io.IOException;
@@ -42,7 +37,7 @@ public class QuizController {
     @FXML
     private Button nextQbtn;
 
-    private int i = 0;
+    private int counter = 0;
 
     @FXML
     private ImageView portalMeeting;
@@ -78,7 +73,7 @@ public class QuizController {
         roomTextArea.setText(game.answerNPC("A"));
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
-        if (i == 0 | i == 3) {
+        if (counter == 0 | counter == 3) {
             game.getCredScore().giveFifteenCred();
         }
         if (game.getCredScore().getCredScore() >= 0.75) {
@@ -95,7 +90,7 @@ public class QuizController {
         roomTextArea.setText(game.answerNPC("B"));
         answerAbtn.setDisable(true);
         answerBbtn.setDisable(true);
-        if (i == 1 | i == 2) {
+        if (counter == 1 | counter == 2) {
             game.getCredScore().giveFifteenCred();
         }
         if (game.getCredScore().getCredScore() >= 0.75) {
@@ -110,13 +105,13 @@ public class QuizController {
 
     @FXML
     private void nextQuestion(ActionEvent event) {
-        i += 1;
-        dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "Quizmaster" + i)));
+        counter += 1;
+        dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "Quizmaster" + counter)));
         roomTextArea.clear();
         answerAbtn.setDisable(false);
         answerBbtn.setDisable(false);
         roomTextArea.setText("A: " + game.answerNPC("A") + "\n" + "B: " + game.answerNPC("B"));
-        if (i == 3) {
+        if (counter == 3) {
             nextQbtn.setDisable(true);
         }
     }

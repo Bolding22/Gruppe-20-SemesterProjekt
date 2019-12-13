@@ -43,7 +43,6 @@ public class HomeController {
             light = false;
             App.setRoot("Dark");
             game.getScore().setPoint(100);
-            System.out.println("Light turned Off.");
         }
 
     }

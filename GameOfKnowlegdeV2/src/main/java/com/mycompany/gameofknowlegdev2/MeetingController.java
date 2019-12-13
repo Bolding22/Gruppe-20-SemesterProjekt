@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.gameofknowlegdev2;
 
 import java.io.IOException;
@@ -21,7 +16,7 @@ import worldofzuul.*;
  * @author wbold
  */
 public class MeetingController {
-    
+
     @FXML
     private TextArea roomTextArea;
     @FXML
@@ -30,7 +25,7 @@ public class MeetingController {
     private Button endBtn;
     @FXML
     private ProgressBar credBar;
-    
+
     Game game = Game.Instance();
     @FXML
     private Button inventoryBtn;
@@ -50,12 +45,12 @@ public class MeetingController {
     private TextArea dialogTextArea1;
     @FXML
     private Button closeBtn;
-    
+
     @FXML
     private void switchToEnd(ActionEvent event) throws IOException {
         App.setRoot("End");
     }
-    
+
     @FXML
     private void talkNR1(MouseEvent event) {
         dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR1")));
@@ -68,7 +63,7 @@ public class MeetingController {
         answerCbtn.setDisable(false);
         nationRep1.setDisable(true);
     }
-    
+
     @FXML
     private void talkNR2(MouseEvent event) {
         dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR2")));
@@ -81,7 +76,7 @@ public class MeetingController {
         answerCbtn.setDisable(false);
         nationRep2.setDisable(true);
     }
-    
+
     @FXML
     private void talkNR3(MouseEvent event) {
         dialogTextArea.setText(game.talkNpc(new Command(CommandWord.TALK, "NR3")));
@@ -94,12 +89,12 @@ public class MeetingController {
         answerCbtn.setDisable(false);
         nationRep3.setDisable(true);
     }
-    
+
     @FXML
     private void printInventory(ActionEvent event) {
         roomTextArea.setText(game.printInventory());
     }
-    
+
     @FXML
     private void printAnswerA(ActionEvent event) {
         dialogTextArea1.setVisible(true);
@@ -121,7 +116,7 @@ public class MeetingController {
         answerBbtn.setDisable(true);
         answerCbtn.setDisable(true);
     }
-    
+
     @FXML
     private void printAnswerB(ActionEvent event) {
         dialogTextArea1.setVisible(true);
@@ -143,7 +138,7 @@ public class MeetingController {
         answerBbtn.setDisable(true);
         answerCbtn.setDisable(true);
     }
-    
+
     @FXML
     private void printAnswerC(ActionEvent event) {
         dialogTextArea1.setVisible(true);
@@ -168,12 +163,12 @@ public class MeetingController {
         answerBbtn.setDisable(true);
         answerCbtn.setDisable(true);
     }
-    
+
     @FXML
     private void getCredScore(MouseEvent event) {
         credBar.setProgress(game.getCredScore().getCredScore());
     }
-    
+
     @FXML
     private void closeWindow(ActionEvent event) {
         dialogTextArea1.setVisible(false);
