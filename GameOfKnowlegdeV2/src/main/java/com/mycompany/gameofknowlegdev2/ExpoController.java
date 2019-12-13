@@ -7,6 +7,7 @@ package com.mycompany.gameofknowlegdev2;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
@@ -39,6 +40,10 @@ public class ExpoController {
     private ProgressBar credBar;
     @FXML
     private ImageView ticTacToeIV;
+    @FXML
+    private Button Inventory;
+    @FXML
+    private ImageView coalSign;
 
     @FXML
     private void goBackBtn(MouseEvent event) throws IOException {
@@ -80,6 +85,12 @@ public class ExpoController {
     private void printTicTacToe(MouseEvent event) throws IOException {
         roomTextArea.setText("Quit playing games already. Let's get on with\n"
                 + "the important stuff.");
+    }
+
+    @FXML
+    private void showCoalSignMessage(MouseEvent event) {
+        roomTextArea.setText("Say yes to your life and when it comes to fossil"
+                + "\nfuels just say no.");
     }
 
 }

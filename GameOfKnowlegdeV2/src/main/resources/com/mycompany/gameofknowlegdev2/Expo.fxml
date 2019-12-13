@@ -69,5 +69,6 @@
          </cursor>
       </ImageView>
       <Button fx:id="Inventory" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="117.0" text="Inventory" />
+      <ImageView fx:id="coalSign" fitHeight="68.0" fitWidth="100.0" layoutX="486.0" layoutY="124.0" onMouseClicked="#showCoalSignMessage" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

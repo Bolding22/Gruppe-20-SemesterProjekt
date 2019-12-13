@@ -67,14 +67,10 @@ public class Game {
         meetingRoom.setExit("next", endRoom);
 
         // Create and add Items to rooms.
-        unRoom.setItem(new Item("Coffe Mug (Empty)"));
-        unRoom.setItem(new Item("Coffe Mug (Filled)"));
+        unRoom.setItem(new Item("CoffeeMugEmpty"));
+        unRoom.setItem(new Item("CoffeeMugFilled"));
 
         scienceRoom.setItem(new Item("Solarpanel"));
-
-        home.setItem(new Item("Switch"));
-
-        quizRoom.setItem(new Item("Invitation"));
 
         // Create and add NPC's to rooms.
         // NPC Jeff
@@ -136,7 +132,7 @@ public class Game {
         Npc quizMaster = new Npc("Quizmaster", ", who will be testing your knowlegde", 4, 2);
 
         quizMaster.setDialogSay("Question #1\n Solar Energy is both cheaper and faster to deploy, than fossil fuels.", 0);
-        quizMaster.setDialogSay("Question #2\n Greenhouse gasses helps the world keep a stable temperature.", 1);
+        quizMaster.setDialogSay("Question #2\n An increasing amount of Greenhouse Gasses have a positive impact on earth.", 1);
         quizMaster.setDialogSay("Question #3\n The U.S. are by far the biggest user of Solar Energy in the world.", 2);
         quizMaster.setDialogSay("Question #4\n Photovoltiac panels are even able to work in a low light setting.", 3);
 
@@ -401,6 +397,13 @@ public class Game {
         return "Inventory contains: \n" + "| " + output;
 
     }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+    
+    
+    
 // Score
 
     public Point getScore() {

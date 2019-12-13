@@ -9,7 +9,7 @@ package worldofzuul;
  *
  * @author oliver
  */
-class Item {
+public class Item {
 
     private String name;
 

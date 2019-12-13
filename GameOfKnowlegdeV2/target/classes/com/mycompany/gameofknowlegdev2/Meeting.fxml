@@ -23,17 +23,17 @@
          </image></ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="275.0" text="You're at the grand meeting!&#10;It's your time to shine. Talk with the represen-&#10;tatives and help them with their problems.&#10;Your acquired knowledge might come in handy.">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="252.0" text="You're at the grand meeting!&#10;It's your time to shine. Talk with the represen-&#10;tatives and help them with their problems.&#10;Your acquired knowledge might come in handy.">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>
-            <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="350.0">
+            <TextArea fx:id="dialogTextArea" editable="false" prefHeight="125.0" prefWidth="355.0">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>
          </children>
       </HBox>
-      <Button fx:id="endBtn" layoutX="534.0" layoutY="138.0" mnemonicParsing="false" onAction="#switchToEnd" text="Finish!" />
+      <Button fx:id="endBtn" layoutX="539.0" layoutY="225.0" mnemonicParsing="false" onAction="#switchToEnd" text="Finish!" />
       <ProgressBar fx:id="credBar" layoutY="260.0" onMouseMoved="#getCredScore" prefHeight="15.0" prefWidth="600.0" progress="0.0">
          <effect>
             <Glow level="0.75">

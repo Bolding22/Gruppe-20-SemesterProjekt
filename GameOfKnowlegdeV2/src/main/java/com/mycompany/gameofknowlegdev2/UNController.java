@@ -87,8 +87,17 @@ public class UNController implements Pickupable {
 
     @FXML
     private void showCoffeeStatus(MouseEvent event) {
-        roomTextArea.setText(
-                "Damn. The coffee machine seems broken. Maybe some power will fix it.");
+        if (game.getInventory().isEmpty()) {
+            game.pickUpItem(new Command(CommandWord.GET, "CoffeeMugEmpty"));
+            roomTextArea.setText(
+                    "Damn. The coffee machine seems broken.\n"
+                    + "Maybe some power will fix it. Go look in the\n"
+                    + "other rooms");
+        } else if (game.getInventory().get(1).getName().equals("Solarpanel")) {
+            game.pickUpItem(new Command(CommandWord.GET, "CoffeeMugFilled"));
+            roomTextArea.setText("You've picked up a delicious coffee");
+            game.getInventory().remove(0);
+        }
     }
 
 }
