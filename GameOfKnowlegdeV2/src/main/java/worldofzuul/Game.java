@@ -132,7 +132,8 @@ public class Game {
         Npc quizMaster = new Npc("Quizmaster", ", who will be testing your knowlegde", 4, 2);
 
         quizMaster.setDialogSay("Question #1\n Solar Energy is both cheaper and faster to deploy, than fossil fuels.", 0);
-        quizMaster.setDialogSay("Question #2\n An increasing amount of Greenhouse Gasses have a positive impact on earth.", 1);
+        quizMaster.setDialogSay("Question #2\n An increasing amount of Greenhouse Gasses have\n"
+                + "a positive impact on earth.", 1);
         quizMaster.setDialogSay("Question #3\n The U.S. are by far the biggest user of Solar Energy in the world.", 2);
         quizMaster.setDialogSay("Question #4\n Photovoltiac panels are even able to work in a low light setting.", 3);
 
@@ -149,9 +150,12 @@ public class Game {
                 + "energy. We can simply not afford to have it. In the village I\n"
                 + "am from, we want to use modern energy. How do you think you\n"
                 + "will be able to help us?", 0);
-        nr1.setDialogAnswer("Talk about the economic benefits of smaller solar panels.", 0);
-        nr1.setDialogAnswer("Talk about the job opportunities a solar panel farm can create.", 1);
-        nr1.setDialogAnswer("Share your knowledge about Solar Power and fossil fuels", 2);
+        nr1.setDialogAnswer("Talk about the economic benefits of smaller\n"
+                + "solar panels.", 0);
+        nr1.setDialogAnswer("Talk about the job opportunities a solar panel\n"
+                + "farm can create.", 1);
+        nr1.setDialogAnswer("Share your knowledge about Solar Power\n"
+                + "and fossil fuels", 2);
         meetingRoom.addNpc(nr1);
 
         Npc nr2 = new Npc("NR2", ", representative of ...", 1, 3);
@@ -164,9 +168,12 @@ public class Game {
                 + "our society, but we also struggle to find work for them. At the\n"
                 + "same time, we have problems getting reliable energy to the whole\n"
                 + "city. Is there someway you can help us with this?", 0);
-        nr2.setDialogAnswer("Talk about the economic benefits of smaller solar panels.", 0);
-        nr2.setDialogAnswer("Talk about the job opportunities a solar panel farm can create.", 1);
-        nr2.setDialogAnswer("Share your knowledge about Solar Power and fossil fuels", 2);
+        nr2.setDialogAnswer("Talk about the economic benefits of smaller\n"
+                + "solar panels.", 0);
+        nr2.setDialogAnswer("Talk about the job opportunities a solar panel\n"
+                + "farm can create.", 1);
+        nr2.setDialogAnswer("Share your knowledge about Solar Power\n"
+                + "and fossil fuels", 2);
 
         Npc nr3 = new Npc("NR3", ", representative of ...", 1, 3);
 
@@ -177,9 +184,12 @@ public class Game {
                 + "but I will not implement something, that I do not know about.\n"
                 + "Also why is it better than the fossil energy, that all the rich\n"
                 + " people have?", 0);
-        nr3.setDialogAnswer("Talk about the economic benefits of smaller solar panels.", 0);
-        nr3.setDialogAnswer("Talk about the job opportunities a solar panel farm can create.", 1);
-        nr3.setDialogAnswer("Share your knowledge about Solar Power and fossil fuels", 2);
+        nr3.setDialogAnswer("Talk about the economic benefits of smaller\n"
+                + "solar panels.", 0);
+        nr3.setDialogAnswer("Talk about the job opportunities a solar panel\n"
+                + "farm can create.", 1);
+        nr3.setDialogAnswer("Share your knowledge about Solar Power\n"
+                + "and fossil fuels", 2);
         meetingRoom.addNpc(nr3);
 
     }

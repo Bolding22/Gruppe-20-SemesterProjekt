@@ -29,7 +29,7 @@
       </ImageView>
       <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
-            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're currently home. &#10;Remember everything before you leave.">
+            <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're currently home. &#10;Remember everything before you leave.&#10;&#10;Help: The bar acrros the screen is tracking&#10;your credibility. Your actions affects this.&#10;To complete the game, you need atleast 75%.">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></TextArea>
@@ -52,6 +52,6 @@
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor></ImageView>
-      <Button fx:id="Inventory" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="119.0" text="Inventory" />
+      <Button fx:id="Inventory" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#printInventory" prefHeight="27.0" prefWidth="119.0" text="Inventory" />
    </children>
 </AnchorPane>

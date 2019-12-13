@@ -21,7 +21,7 @@
             <Image url="@ExpoOut.png" />
          </image>
       </ImageView>
-      <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
+      <HBox layoutY="275.0" prefHeight="125.0" prefWidth="600.0">
          <children>
             <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're currently outside the Expo.&#10;Look around, you might find something useful">
                <cursor>
