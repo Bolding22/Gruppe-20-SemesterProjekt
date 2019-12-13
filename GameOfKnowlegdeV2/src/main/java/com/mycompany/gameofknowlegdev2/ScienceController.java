@@ -47,9 +47,11 @@ public class ScienceController {
     private Button answerBbtn;
     @FXML
     private ImageView jeff;
+    @FXML
+    private ImageView backBtn;
 
     @FXML
-    private void switchToExpo(ActionEvent event) throws IOException {
+    private void switchToExpo(MouseEvent event) throws IOException {
         App.setRoot("Expo");
         game.goRoom(new Command(CommandWord.GO, "back"));
     }

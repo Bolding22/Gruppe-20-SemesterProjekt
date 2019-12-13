@@ -17,12 +17,8 @@
    <children>
       <ImageView fitHeight="275.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@79308348_603595057130418_7723800088245436416_n.png" />
+            <Image url="@78974284_672967429776601_2052723114533453824_n.png" />
          </image></ImageView>
-      <Button fx:id="goBackScience" layoutX="278.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToExpo" text="Back">
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor></Button>
       <ImageView fx:id="rick" fitHeight="72.0" fitWidth="83.0" layoutX="144.0" layoutY="149.0" onMouseClicked="#talkRick" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
@@ -41,6 +37,11 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Rectangle>
+      <ImageView fx:id="backBtn" fitHeight="36.0" fitWidth="40.0" layoutX="14.0" layoutY="221.0" onMouseClicked="#switchToExpo" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
       <HBox layoutY="275.0" onKeyPressed="#showRoomText" prefHeight="125.0" prefWidth="600.0">
          <children>
             <TextArea fx:id="roomTextArea" editable="false" prefHeight="125.0" prefWidth="245.0" text="You're in the Science Room!&#10;Talk with Rick and Jeff. Surely they'll teach&#10;you a thing or two. And don't forget your&#10;souvenir! There is a free solarpanelmodel&#10;for everyone.">
